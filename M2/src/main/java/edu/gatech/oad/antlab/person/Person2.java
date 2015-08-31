@@ -9,7 +9,7 @@ import java.util.LinkedList;
  *  returns their name and a
  *  modified string 
  *
- * @author Bob
+ * @author Zheng Wu
  * @version 1.1
  */
 public class Person2 {
@@ -34,18 +34,16 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-		LinkedList a = new LinkedList();
-		String out = "";
-		for (int i = 0; i < input.length();i++)
-		{
-
-			a.add(input.charAt(i));
-			Collections.shuffle(a);
-			char [] b = new char[input.length()];
-			out = String.valueOf(b);
-
+		LinkedList<Character> characters = new LinkedList<Character>();
+		for(char c:input.toCharArray()){
+			characters.add(c);
 		}
-	  return out;
+		StringBuilder output = new StringBuilder(input.length());
+		while(characters.size()!=0){
+			int randPicker = (int)(Math.random()*characters.size());
+			output.append(characters.remove(randPicker));
+		}
+		return output.toString();
 	}
 	/**
 	 * Return a string rep of this object
