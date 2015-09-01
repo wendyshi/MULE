@@ -25,13 +25,15 @@ public class Person5 {
 	 * 2 positions.
 	 * given "gtg123b" it should return
 	 * "g123bgt".
-	 *
+	 *想办法把前两个字母存上然后放到最后面就行了
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
+		String a = input.substring(0,2);
+		String b = input.substring(2);
+		String c = b + a;
+		return c;
 	}
 	
 	/**
