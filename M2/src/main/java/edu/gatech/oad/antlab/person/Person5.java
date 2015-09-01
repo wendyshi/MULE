@@ -29,10 +29,13 @@ public class Person5 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-		String a = input.substring(0,2);
-		String b = input.substring(2);
-		String c = b + a;
-		return c;
+		int length = input.length();
+		for (int i = 0; i < 2; i++){
+			for (int j = 0; j < input.length() - 1; j++) {
+				swap(input.charAt(j), input.charAt(j + 1));
+			}
+		}
+		return input;
 	}
 	
 	/**
