@@ -29,17 +29,10 @@ public class Person5 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-		int len = input.length();
-		String tag = "";
-		for (int i = 0; i < 2; i++){
-			for (int j = 0; j < len - 1; j++) {
-				char a = tag.charAt(j);
-				char b = tag.charAt(j + 1);
-				b = a;
-				a = b;
-			}
-		}
-		return tag;
+		String a = input.substring(0,2);
+		String b = input.substring(2);
+		String c = b + a;
+		return c;
 	}
 	
 	/**
