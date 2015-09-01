@@ -25,7 +25,6 @@ public class Person5 {
 	 * 2 positions.
 	 * given "gtg123b" it should return
 	 * "g123bgt".
-	 *想办法把前两个字母存上然后放到最后面就行了
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
