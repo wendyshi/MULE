@@ -4,16 +4,16 @@ package sample;
  * Created by William on 2015/9/19.
  */
 public class Player {
-    private static int color;
+    private static String color;
     private static String name;
     private static String race;
 
-    public int getColor()
+    public String getColor()
     {
         return color;
     }
 
-    public void setColor(int c)
+    public void setColor(String c)
     {
         color = c;
     }

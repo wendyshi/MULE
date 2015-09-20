@@ -44,10 +44,13 @@ public class Scene2Controller {
     private Label PlayerX;
     @FXML
     private Pane Scene2;
+    @FXML
+    private TextField Name;
 
     private static String race;
     private static String colorp;
     private static int c;
+    private static Player p1,p2,p3,p4;
     private int count;
 
 
@@ -130,16 +133,14 @@ public class Scene2Controller {
 
     @FXML
     private void goNext(ActionEvent event) throws Exception {
-//        Scene1Controller s1 = new Scene1Controller();
-    //    Stage st1 = (Stage) Next.getScene().getWindow();
-//        c = s1.getCount();
-        System.out.println(count);
-       // Stage ss = (Stage)Next.getScene().getWindow();
+
         if(count==4)
         {
 //            count=3;
             repeatScene("MuleScene2.fxml");
-            System.out.println(c);
+            p4.setName(Name.getText());
+            p4.setColor(colorp);
+
         }
         if(count==3)
         {
