@@ -135,11 +135,18 @@ public class Scene2Controller {
 
         if(count==4)
         {
+
             String n = Name.getText();
             String r = Race.getSelectionModel().getSelectedItem().toString();
             String c = ColorPick.getSelectionModel().getSelectedItem().toString();
-            p4 = new Player(n,r,c);
-            p4.toString();
+//            if((n==null)||(r ==null) ||(c==null))
+//            {
+//                creatWindow("SettingWarning.fxml");
+//            }
+
+             //   p4 = new Player(n, r, c);
+               // p4.toString();
+            System.out.println(n+r+c);
             repeatScene("MuleScene2.fxml");
 
 

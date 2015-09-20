@@ -40,8 +40,7 @@ public class Scene1Controller {
     private RadioButton Quadra;
     @FXML
     private ComboBox Difficulty;
-    @FXML
-    private Button Okay;
+
 
 
     private static String mType;
@@ -68,12 +67,6 @@ public class Scene1Controller {
                 s.close();
                 newWindow("MuleScene2.fxml", "Player Settings", 600, 600);
         }
-    }
-
-    @FXML
-    public void oKclicked(ActionEvent event) throws Exception {
-        Stage s = (Stage) Okay.getScene().getWindow();
-        s.close();
     }
 
     @FXML
