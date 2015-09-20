@@ -3,7 +3,7 @@ package sample;
 import javafx.event.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import com.sun.javafx.scene.SceneEventDispatcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
@@ -45,7 +44,7 @@ public class Scene2Controller {
     @FXML
     private Pane Scene2;
     @FXML
-    private TextField Name;
+    private javafx.scene.control.TextField Name;
 
     private static String race;
     private static String colorp;
@@ -136,10 +135,14 @@ public class Scene2Controller {
 
         if(count==4)
         {
-//            count=3;
+            String n = Name.getText();
+            String r = Race.getSelectionModel().getSelectedItem().toString();
+            String c = ColorPick.getSelectionModel().getSelectedItem().toString();
+            p4 = new Player(n,r,c);
+            p4.toString();
             repeatScene("MuleScene2.fxml");
-            p4.setName(Name.getText());
-            p4.setColor(colorp);
+
+
 
         }
         if(count==3)

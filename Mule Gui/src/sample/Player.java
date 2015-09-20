@@ -7,7 +7,16 @@ public class Player {
     private static String color;
     private static String name;
     private static String race;
+    public Player()
+    {
 
+    }
+    public Player(String name, String race, String color)
+    {
+        this.name = name;
+        this.race = race;
+        this.color = color;
+    }
     public String getColor()
     {
         return color;
@@ -34,5 +43,10 @@ public class Player {
     public void setRace(String r)
     {
         race =r;
+    }
+    public String toString()
+    {
+        System.out.println(race+" "+name+" "+color);
+        return race+name+color;
     }
 }
