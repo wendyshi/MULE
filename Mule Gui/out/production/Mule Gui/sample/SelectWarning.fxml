@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Scene1Controller">
+   <children>
+      <Text fill="#cdd31d" layoutX="106.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label alignment="CENTER" layoutX="39.0" layoutY="62.0" text="Please Select Difficulty, Map Type&#10;And Player Number To Continue!" textFill="#001101" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="Okay" layoutX="121.0" layoutY="126.0" mnemonicParsing="false" onAction="#oKclicked" prefHeight="30.0" prefWidth="90.0" text="OK" />
+      <ImageView fitHeight="64.0" fitWidth="68.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@warning-icon-hi.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="68.0" layoutX="282.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@warning-icon-hi.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
