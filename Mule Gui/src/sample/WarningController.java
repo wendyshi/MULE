@@ -15,7 +15,7 @@ public class WarningController {
     private Button Ok;
 
     @FXML
-    public void oKclicked(ActionEvent event) throws Exception {
+    public void oKayclicked(ActionEvent event) throws Exception {
         Stage s = (Stage) Okay.getScene().getWindow();
         s.close();
     }

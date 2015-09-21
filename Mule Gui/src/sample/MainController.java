@@ -21,7 +21,7 @@ public class MainController {
         Stage stage = (Stage)New.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("MuleScene1.fxml"));
         stage.setTitle("Mule");
-        stage.setScene(new Scene(root, 600, 600));
+        stage.setScene(new Scene(root, 600, 630));
         stage.resizableProperty().setValue(false);
         stage.show();
 

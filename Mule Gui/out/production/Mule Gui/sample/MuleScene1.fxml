@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.embed.swing.*?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<Pane fx:id="settings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Scene1Controller">
+<Pane fx:id="settings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Scene1Controller">
     <children>
         <Label layoutX="202.0" layoutY="38.0" text="Game Settings" textAlignment="CENTER" underline="true">
             <font>
@@ -26,7 +27,7 @@
                 <Font size="23.0" />
             </font>
         </Label>
-        <RadioButton fx:id="Standard" layoutX="81.0" layoutY="253.0" mnemonicParsing="false" onAction="#selectMap" text="Standard">
+        <RadioButton fx:id="Standard" layoutX="75.0" layoutY="275.0" mnemonicParsing="false" onAction="#selectMap" prefHeight="12.0" prefWidth="98.0" text="Standard">
             <toggleGroup>
                 <ToggleGroup fx:id="MapChoice" />
             </toggleGroup>
@@ -34,7 +35,7 @@
                 <Font size="16.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="Random" layoutX="81.0" layoutY="291.0" mnemonicParsing="false" onAction="#selectMap" text="Random" toggleGroup="$MapChoice">
+        <RadioButton fx:id="Random" layoutX="403.0" layoutY="275.0" mnemonicParsing="false" onAction="#selectMap" text="Random" toggleGroup="$MapChoice">
             <font>
                 <Font size="16.0" />
             </font></RadioButton>
@@ -64,7 +65,7 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <RadioButton fx:id="Single" layoutX="85.0" layoutY="399.0" mnemonicParsing="false" onAction="#selectNumber" text="Single">
+      <RadioButton fx:id="Double" layoutX="75.0" layoutY="388.0" mnemonicParsing="false" onAction="#selectNumber" text="Double">
          <font>
             <Font size="16.0" />
          </font>
@@ -72,25 +73,35 @@
             <ToggleGroup fx:id="Number" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="Double" layoutX="85.0" layoutY="460.0" mnemonicParsing="false" onAction="#selectNumber" text="Double" toggleGroup="$Number">
+      <RadioButton fx:id="Triple" layoutX="253.0" layoutY="388.0" mnemonicParsing="false" onAction="#selectNumber" text="Triple" toggleGroup="$Number">
          <font>
             <Font size="16.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="Triple" layoutX="334.0" layoutY="399.0" mnemonicParsing="false" onAction="#selectNumber" text="Triple" toggleGroup="$Number">
+      <RadioButton fx:id="Quadra" layoutX="411.0" layoutY="388.0" mnemonicParsing="false" onAction="#selectNumber" text="Quadra" toggleGroup="$Number">
          <font>
             <Font size="16.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="Quadra" layoutX="334.0" layoutY="460.0" mnemonicParsing="false" onAction="#selectNumber" text="Quadra" toggleGroup="$Number">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </RadioButton>
-      <Button fx:id="Accept" layoutX="450.0" layoutY="519.0" mnemonicParsing="false" onAction="#ShowConfig" text="Accept" textAlignment="CENTER">
+      <Button fx:id="Accept" layoutX="497.0" layoutY="578.0" mnemonicParsing="false" onAction="#ShowConfig" text="Accept" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="53.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@two.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="216.0" layoutY="428.0" preserveRatio="true">
+         <image>
+            <Image url="@three.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="376.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@four.jpg" />
+         </image>
+      </ImageView>
     </children>
 </Pane>

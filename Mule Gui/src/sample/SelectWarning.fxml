@@ -27,7 +27,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="Okay" layoutX="121.0" layoutY="126.0" mnemonicParsing="false" onAction="#oKclicked" prefHeight="30.0" prefWidth="90.0" text="OK" />
+      <Button fx:id="Okay" layoutX="121.0" layoutY="126.0" mnemonicParsing="false" onAction="#oKayclicked" prefHeight="30.0" prefWidth="90.0" text="OK" />
       <ImageView fitHeight="64.0" fitWidth="68.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@warning-icon-hi.png" />

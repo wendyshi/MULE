@@ -31,8 +31,6 @@ public class Scene1Controller {
     @FXML
     private ToggleGroup Number;
     @FXML
-    private RadioButton Single;
-    @FXML
     private RadioButton Double;
     @FXML
     private RadioButton Triple;
@@ -42,15 +40,14 @@ public class Scene1Controller {
     private ComboBox Difficulty;
 
 
-
     private static String mType;
     private static int count;
     private static String level;
-
-
+    private static GameConfig gameConfig;
 
 
     public Scene1Controller() {
+
 
     }
 
@@ -58,14 +55,15 @@ public class Scene1Controller {
     @FXML
     public void ShowConfig(ActionEvent e) throws Exception {
         if ((!Standard.isSelected() && !Random.isSelected())
-                || (!Single.isSelected() && !Double.isSelected()
+                || (!Double.isSelected()
                 && !Triple.isSelected() && !Quadra.isSelected())
-        || level == null) {
-            newWindow("SelectWarning.fxml","Warning",350,170);
+                || level == null) {
+            newWindow("SelectWarning.fxml", "Warning", 350, 170);
         } else {
-                Stage s = (Stage) Accept.getScene().getWindow();
-                s.close();
-                newWindow("MuleScene2.fxml", "Player Settings", 600, 600);
+            gameConfig = new GameConfig(level, mType, count);
+            Stage s = (Stage) Accept.getScene().getWindow();
+            s.close();
+            newWindow("MuleScene2.fxml", "Player Settings", 600, 600);
         }
     }
 
@@ -88,10 +86,8 @@ public class Scene1Controller {
 
     @FXML
     public void selectNumber(ActionEvent e) throws Exception {
-        if (Single.isSelected()) {
-            count = 1;
 
-        } else if (Double.isSelected()) {
+        if (Double.isSelected()) {
             count = 2;
         } else if (Triple.isSelected()) {
             count = 3;
@@ -123,8 +119,13 @@ public class Scene1Controller {
         return count;
     }
 
-    public void setCount(int count){
+    public void setCount(int count) {
         this.count = count;
+    }
+
+    public GameConfig getGameConfig()
+    {
+        return gameConfig;
     }
 
 }

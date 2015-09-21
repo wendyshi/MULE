@@ -43,7 +43,8 @@
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Human" />
                 <String fx:value="Elf" />
-                <String fx:value="Dwarves" />
+                <String fx:value="Dwarve" />
+                <String fx:value="Hobbit" />
             </FXCollections>
         </items>
         </ComboBox>

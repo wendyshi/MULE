@@ -21,5 +21,6 @@
                 <Font name="Arial Bold" size="28.0" />
             </font>
         </Label>
+      <Button fx:id="bbbb" layoutX="273.0" layoutY="289.0" mnemonicParsing="false" onAction="#setbbbb" text="Button" />
     </children>
 </Pane>

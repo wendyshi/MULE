@@ -55,7 +55,7 @@ public class Scene2Controller {
 
 
 
-    public  Scene2Controller() throws Exception
+    public  Scene2Controller()
     {
 
         Scene1Controller s1 = new Scene1Controller();
@@ -63,29 +63,8 @@ public class Scene2Controller {
         count = c;
         s1.setCount(count - 1);
         System.out.println(c);
-        if (count == 4){
-
-        }
-
-        if(count ==3)
-        {
-
-        }
-
-        if(count == 2){
-
-        }
-
-        if (count == 1){
-
-        }
     }
 
-    @FXML
-    private void scene2Initial(ActionEvent event) throws Exception
-    {
-
-    }
     @FXML
     private void chooseColor (ActionEvent event) throws Exception
     {
@@ -116,8 +95,12 @@ public class Scene2Controller {
         else if (race.equals("Elf")) {
             Description.setText("The Elves were the fairest creatures,a far more beautiful race than Human,and generally taller.");
     }
-        else if (race.equals("Dwarves")){
+        else if (race.equals("Dwarve")){
             Description.setText("The Dwarves are from underground, they are shorter and more hairy than human.");
+        }
+        else if(race.equals("Hobbit"))
+        {
+            Description.setText("The Hobbits are Generally Shorter than Human,they are thin and small.");
         }
     }
 
@@ -126,54 +109,68 @@ public class Scene2Controller {
     {
         Stage st1 = (Stage) Back.getScene().getWindow();
         st1.close();
-        creatWindow("MuleScene1.fxml");
+        createWindow
+                ("MuleScene1.fxml",600,630);
 
     }
 
     @FXML
     private void goNext(ActionEvent event) throws Exception {
 
-        if(count==4)
-        {
+        String n;
+        String r;
+        String c;
+        try {
+            if (count == 4) {
 
-            String n = Name.getText();
-            String r = Race.getSelectionModel().getSelectedItem().toString();
-            String c = ColorPick.getSelectionModel().getSelectedItem().toString();
-//            if((n==null)||(r ==null) ||(c==null))
-//            {
-//                creatWindow("SettingWarning.fxml");
-//            }
-
-             //   p4 = new Player(n, r, c);
-               // p4.toString();
-            System.out.println(n+r+c);
-            repeatScene("MuleScene2.fxml");
+                n = Name.getText();
+                r = Race.getSelectionModel().getSelectedItem().toString();
+                c = ColorPick.getSelectionModel().getSelectedItem().toString();
+                p4 = new Player(n, r, c);
+                p4.toString();
+                repeatScene("MuleScene2.fxml");
 
 
+            }
+            if (count == 3) {
+                n = Name.getText();
+                r = Race.getSelectionModel().getSelectedItem().toString();
+                c = ColorPick.getSelectionModel().getSelectedItem().toString();
+                p3 = new Player(n, r, c);
+                p3.toString();
+                repeatScene("MuleScene2.fxml");
+            }
+            if (count == 2) {
+                n = Name.getText();
+                r = Race.getSelectionModel().getSelectedItem().toString();
+                c = ColorPick.getSelectionModel().getSelectedItem().toString();
+                p2 = new Player(n, r, c);
+                p2.toString();
+                repeatScene("MuleScene2.fxml");
+            }
+            if (count == 1) {
 
-        }
-        if(count==3)
-        {
-//            count=2;
-            repeatScene("MuleScene2.fxml");
-            System.out.println(c);
-        }
-       if(count==2)
-        {
-            repeatScene("MuleScene2.fxml");
-            System.out.println(c);
-        }
-        if(count==1)
-        {
+                n = Name.getText();
+                r = Race.getSelectionModel().getSelectedItem().toString();
+                c = ColorPick.getSelectionModel().getSelectedItem().toString();
+                p1 = new Player(n, r, c);
+                p1.toString();
+                repeatScene("MuleScene3.fxml");
 
-            repeatScene("MuleScene3.fxml");
-            System.out.println(c);
+            }
+
+        } catch (Exception e) {
+            Scene1Controller s1 = new Scene1Controller();
+            int cc = s1.getCount();
+            s1.setCount(cc++);
+            System.out.println(cc);
+            createWindow("SettingWarning.fxml", 350, 170);
         }
 
     }
-
     //create a new window by name of fxml
-    private void creatWindow(String fxml) throws Exception {
+    private void createWindow
+    (String fxml) throws Exception {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
         stage.setTitle("Player Settings");
@@ -182,13 +179,38 @@ public class Scene2Controller {
         stage.show();
 
     }
+
+    private void createWindow(String fxml, int height, int width) throws Exception {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+        stage.setTitle("Player Settings");
+        stage.setScene(new Scene(root, height, width));
+        stage.resizableProperty().setValue(false);
+        stage.show();
+    }
     //create a same scene
     private void repeatScene(String fxml) throws Exception
     {
         Stage ss = (Stage)Next.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
-        ss.setScene(new Scene(root,600,600));
+        ss.setScene(new Scene(root, 600, 600));
 
+    }
+    public Player returnPlayer1()
+    {
+        return p1;
+    }
+    public Player returnPlayer2()
+    {
+        return p2;
+    }
+    public Player returnPlayer3()
+    {
+        return p3;
+    }
+    public Player returnPlayer4()
+    {
+        return p4;
     }
 
 }
