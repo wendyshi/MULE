@@ -13,10 +13,10 @@ public class Scene3Controller {
     private String diff;
     private String mapT;
     private int numP;
-    private Player p1;
-    private Player p2;
-    private Player p3;
-    private Player p4;
+    private static Player p1;
+    private static Player p2;
+    private static Player p3;
+    private static Player p4;
 
     @FXML
     private Button bbbb;
@@ -29,24 +29,21 @@ public class Scene3Controller {
 
         Scene2Controller s2c = new Scene2Controller();
         if(numP == 2) {
-            p1 = s2c.returnPlayer1();
-            p2 = s2c.returnPlayer2();
-            p3 = null;
-            p4 = null;
+            p1 = s2c.getP1();
+            p2 = s2c.getP2();
         }
         else if(numP == 3)
         {
-            p1 = s2c.returnPlayer1();
-            p2 = s2c.returnPlayer2();
-            p3 = s2c.returnPlayer3();
-            p4 = null;
+            p1 = s2c.getP1();
+            p2 = s2c.getP2();
+            p3 = s2c.getP3();
         }
         else if (numP ==4)
         {
-            p1 = s2c.returnPlayer1();
-            p2 = s2c.returnPlayer2();
-            p3 = s2c.returnPlayer3();
-            p4 = s2c.returnPlayer4();
+            p1 = s2c.getP1();
+            p2 = s2c.getP2();
+            p3 = s2c.getP3();
+            p4 = s2c.getP4();
         }
 
     }
@@ -55,6 +52,8 @@ public class Scene3Controller {
     {
         System.out.println(diff+" "+mapT+" "+numP);
         System.out.println(p1.getColor()+p1.getName()+p1.getRace());
+        System.out.println(p2.getColor()+p2.getName()+p2.getRace());
+
     }
 
  }

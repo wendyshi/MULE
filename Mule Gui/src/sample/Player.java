@@ -44,9 +44,15 @@ public class Player {
     {
         race =r;
     }
+
+    public void setAll(String n, String r, String c)
+    {
+        name =n;
+        race =r;
+        color =c;
+    }
     public String toString()
     {
-        System.out.println(race+" "+name+" "+color);
         return race+name+color;
     }
 }

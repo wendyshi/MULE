@@ -46,11 +46,15 @@ public class Scene2Controller {
     @FXML
     private javafx.scene.control.TextField Name;
 
-    private static String race;
-    private static String colorp;
-    private static int c;
-    private static Player p1,p2,p3,p4;
+    private String race;
+    private String colorp;
+    private static int cc;
+    private static Player p1;
+    private static Player p2;
+    private static Player p3;
+    private static Player p4;
     private int count;
+    private String n,c,r;
 
 
 
@@ -59,10 +63,13 @@ public class Scene2Controller {
     {
 
         Scene1Controller s1 = new Scene1Controller();
-        c = s1.getCount();
-        count = c;
+        cc= s1.getCount();
+        count = cc;
         s1.setCount(count - 1);
-        System.out.println(c);
+        p1 = new Player();
+        p2 = new Player();
+        p3 = new Player();
+        p4 = new Player();
     }
 
     @FXML
@@ -117,17 +124,13 @@ public class Scene2Controller {
     @FXML
     private void goNext(ActionEvent event) throws Exception {
 
-        String n;
-        String r;
-        String c;
         try {
             if (count == 4) {
 
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
-                p4 = new Player(n, r, c);
-                p4.toString();
+                p4.setAll(n,r,c);
                 repeatScene("MuleScene2.fxml");
 
 
@@ -136,25 +139,25 @@ public class Scene2Controller {
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
-                p3 = new Player(n, r, c);
-                p3.toString();
+                p3.setAll(n,r,c);
                 repeatScene("MuleScene2.fxml");
             }
             if (count == 2) {
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
-                p2 = new Player(n, r, c);
-                p2.toString();
+                p2.setAll(n, r, c);
+               // System.out.println(p2.toString());
                 repeatScene("MuleScene2.fxml");
+
             }
             if (count == 1) {
 
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
-                p1 = new Player(n, r, c);
-                p1.toString();
+                p1.setAll(n, r, c);
+                //System.out.println(p1.toString());
                 repeatScene("MuleScene3.fxml");
 
             }
@@ -163,9 +166,10 @@ public class Scene2Controller {
             Scene1Controller s1 = new Scene1Controller();
             int cc = s1.getCount();
             s1.setCount(cc++);
-            System.out.println(cc);
             createWindow("SettingWarning.fxml", 350, 170);
         }
+        System.out.println(p1.toString());
+        System.out.println(p2.toString());
 
     }
     //create a new window by name of fxml
@@ -196,19 +200,19 @@ public class Scene2Controller {
         ss.setScene(new Scene(root, 600, 600));
 
     }
-    public Player returnPlayer1()
+    public static Player getP1()
     {
         return p1;
     }
-    public Player returnPlayer2()
+    public static Player getP2()
     {
         return p2;
     }
-    public Player returnPlayer3()
+    public static Player getP3()
     {
         return p3;
     }
-    public Player returnPlayer4()
+    public static Player getP4()
     {
         return p4;
     }
