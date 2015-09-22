@@ -63,7 +63,19 @@ public class Scene1Controller {
             gameConfig = new GameConfig(level, mType, count);
             Stage s = (Stage) Accept.getScene().getWindow();
             s.close();
-            newWindow("MuleScene2.fxml", "Player Settings", 600, 600);
+            if(count == 4) {
+                newWindow("MuleScene2.fxml", "Player Settings", 600, 600);
+            }
+            else if (count ==3)
+            {
+                newWindow("MuleScene2.fxml", "Player Settings", 600, 600);
+
+            }
+            else if(count ==2)
+            {
+                newWindow("MuleScene2.fxml", "Player Settings", 600, 600);
+            }
+
         }
     }
 

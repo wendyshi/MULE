@@ -4,9 +4,9 @@ package sample;
  * Created by William on 2015/9/19.
  */
 public class Player {
-    private static String color;
-    private static String name;
-    private static String race;
+    private  String color;
+    private  String name;
+    private  String race;
     public Player()
     {
 

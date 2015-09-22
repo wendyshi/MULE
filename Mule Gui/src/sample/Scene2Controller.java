@@ -21,6 +21,8 @@ import javafx.stage.Stage;
 import javax.lang.model.util.ElementFilter;
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 
 /**
  * Created by William on 2015/9/19.
@@ -54,22 +56,16 @@ public class Scene2Controller {
     private static Player p3;
     private static Player p4;
     private int count;
+    private int c1;
     private String n,c,r;
-
+    private String p4Name,p3Name,p2Name,p1Name;
+    private String p4Color,p3Color,p2Color,p1Color;
 
 
 
     public  Scene2Controller()
     {
 
-        Scene1Controller s1 = new Scene1Controller();
-        cc= s1.getCount();
-        count = cc;
-        s1.setCount(count - 1);
-        p1 = new Player();
-        p2 = new Player();
-        p3 = new Player();
-        p4 = new Player();
     }
 
     @FXML
@@ -124,52 +120,147 @@ public class Scene2Controller {
     @FXML
     private void goNext(ActionEvent event) throws Exception {
 
+        Scene1Controller s1 = new Scene1Controller();
+        cc= s1.getCount();
+        count = cc;
+        c1 = cc;
+        s1.setCount(count - 1);
         try {
             if (count == 4) {
-
+                p4 = new Player();
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
                 p4.setAll(n,r,c);
+                p4Name =n;
+                p4Color =c;
                 repeatScene("MuleScene2.fxml");
-
 
             }
             if (count == 3) {
+                p3 = new Player();
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
-                p3.setAll(n,r,c);
-                repeatScene("MuleScene2.fxml");
+                p3.setAll(n, r, c);
+                p3Name =n;
+                p3Color =c;
+                if(c1 ==4)
+                {
+                    if((n.equals(p4Name)))
+                    {
+                        createWindow("SameNameWarning.fxml",350,170);
+                        count++;
+                    }
+                    else if((c.equals(p4Color)))
+                    {
+                        createWindow("SameColorWarning.fxml",350,170);
+                        count++;
+                    }
+                    else {
+                        repeatScene("MuleScene2.fxml");
+                    }
+                }
+                else if(c1==3)
+                {
+                    repeatScene("MuleScene2.fxml");
+                }
+
             }
             if (count == 2) {
+                p2 = new Player();
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
                 p2.setAll(n, r, c);
-               // System.out.println(p2.toString());
-                repeatScene("MuleScene2.fxml");
+                p2Name = n;
+                p2Color = c;
+                if (c1 == 4) {
+                    if ((n.equals(p4Name)) || n.equals(p3Name)) {
+                        createWindow("SameNameWarning.fxml", 350, 170);
+                        count++;
+                    } else if ((c.equals(p4Color)) || (c.equals(p3Color))) {
+                        createWindow("SameColorWarning.fxml", 350, 170);
+                        count++;
+                    } else {
+                        repeatScene("MuleScene2.fxml");
+                    }
+                } else if (c1 == 3) {
+                    if (( n.equals(p3Name))) {
+                        createWindow("SameNameWarning.fxml", 350, 170);
+                        count++;
+                    } else if ((c.equals(p3Color))) {
+                        createWindow("SameColorWarning.fxml", 350, 170);
+                        count++;
+                    } else {
+                        repeatScene("MuleScene2.fxml");
+                    }
+                }
+                    else {
+                    repeatScene("MuleScene2.fxml");
+                }
 
             }
-            if (count == 1) {
 
+            if (count == 1) {
+                p1 = new Player();
                 n = Name.getText();
                 r = Race.getSelectionModel().getSelectedItem().toString();
                 c = ColorPick.getSelectionModel().getSelectedItem().toString();
                 p1.setAll(n, r, c);
-                //System.out.println(p1.toString());
-                repeatScene("MuleScene3.fxml");
+                p1Name =n;
+                p1Color =c;
+                if (c1 == 4) {
+                    if ((n.equals(p4Name)) || n.equals(p3Name)||n.equals(p2Name)) {
+                        createWindow("SameNameWarning.fxml", 350, 170);
+                        count++;
+                    } else if ((c.equals(p4Color)) || (c.equals(p3Color))||c.equals(p2Color)) {
+                        createWindow("SameColorWarning.fxml", 350, 170);
+                        count++;
+                    } else {
+                        repeatScene("MuleScene2.fxml");
+                    }
+                } else if(c1 == 3) {
+                    if (( n.equals(p3Name))||n.equals(p2Color)) {
+                        createWindow("SameNameWarning.fxml", 350, 170);
+                        count++;
+                    } else if ((c.equals(p3Color))||c.equals(p2Color)) {
+                        createWindow("SameColorWarning.fxml", 350, 170);
+                        count++;
+                    } else {
+                        repeatScene("MuleScene2.fxml");
+                    }
+                }
+                else if (c1==2)
+                {
+                    if(n.equals(p2Name))
+                    {
+                        createWindow("SameNameWarning.fxml", 350, 170);
+                        count++;
+                    }
+                    else if(c.equals(p2Color))
+                    {
+                        createWindow("SameNameWarning.fxml", 350, 170);
+                        count++;
+                    }
+                    else {
+                        repeatScene("MuleScene2.fxml");
+                    }
+
+                }
+                else {
+                    repeatScene("MuleScene2.fxml");
+                }
 
             }
 
+
         } catch (Exception e) {
-            Scene1Controller s1 = new Scene1Controller();
-            int cc = s1.getCount();
+            Scene1Controller s2 = new Scene1Controller();
+            int cc = s2.getCount();
             s1.setCount(cc++);
             createWindow("SettingWarning.fxml", 350, 170);
         }
-        System.out.println(p1.toString());
-        System.out.println(p2.toString());
 
     }
     //create a new window by name of fxml
@@ -200,19 +291,19 @@ public class Scene2Controller {
         ss.setScene(new Scene(root, 600, 600));
 
     }
-    public static Player getP1()
+    public Player getP1()
     {
         return p1;
     }
-    public static Player getP2()
+    public Player getP2()
     {
         return p2;
     }
-    public static Player getP3()
+    public Player getP3()
     {
         return p3;
     }
-    public static Player getP4()
+    public Player getP4()
     {
         return p4;
     }
