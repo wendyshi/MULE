@@ -42,6 +42,7 @@ public class Scene1Controller {
 
     private static String mType;
     private static int count;
+    private static int c;
     private static String level;
     private static GameConfig gameConfig;
 
@@ -101,10 +102,13 @@ public class Scene1Controller {
 
         if (Double.isSelected()) {
             count = 2;
+            c=2;
         } else if (Triple.isSelected()) {
             count = 3;
+            c=3;
         } else {
             count = 4;
+            c=4;
         }
 
     }
@@ -130,11 +134,12 @@ public class Scene1Controller {
     public int getCount() {
         return count;
     }
-
+    public int getC() {
+        return c;
+    }
     public void setCount(int count) {
         this.count = count;
     }
-
     public GameConfig getGameConfig()
     {
         return gameConfig;

@@ -98,8 +98,6 @@ public class Scene3Controller {
     @FXML
     private void setshw(ActionEvent event) throws Exception {
         Scene2Controller s2c = new Scene2Controller();
-//        p4.setAll(players.pop().getName(),players.pop().getRace(),players.pop().getColor());
-//        System.out.println(s2c.pData.pop().getName());
         d.setText(diff);
         t.setText(mapT);
         n.setText(String.valueOf(numP));
