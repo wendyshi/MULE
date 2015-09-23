@@ -17,7 +17,7 @@
 
 <Pane fx:id="ReviewSettings" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Scene3Controller">
     <children>
-        <Label layoutX="190.0" layoutY="37.0" text="Review Settings" textAlignment="CENTER" textFill="#ff5cec" underline="true">
+        <Label layoutX="190.0" layoutY="37.0" text="Review Settings" textAlignment="CENTER" textFill="#28ebc4" underline="true">
             <font>
                 <Font name="Arial Bold" size="28.0" />
             </font>
@@ -28,17 +28,17 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="154.0" text="Difficulty" textFill="#ff5cec">
+      <Label layoutX="14.0" layoutY="154.0" text="Difficulty" textFill="#28ebc4">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="256.0" layoutY="155.0" text="Map Type" textFill="#ff5cec">
+      <Label layoutX="256.0" layoutY="155.0" text="Map Type" textFill="#28ebc4">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="464.0" layoutY="155.0" text="Player Number" textFill="#ff5cec">
+      <Label layoutX="464.0" layoutY="155.0" text="Player Number" textFill="#28ebc4">
          <font>
             <Font size="18.0" />
          </font>
@@ -71,22 +71,22 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="62.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 1" textFill="#ff5cec">
+      <Label layoutX="62.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 1" textFill="#28ebc4">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="202.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 2" textFill="#ff5cec">
+      <Label layoutX="202.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 2" textFill="#28ebc4">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="345.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 3" textFill="#ff5cec">
+      <Label layoutX="345.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 3" textFill="#28ebc4">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="502.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 4" textFill="#ff5cec">
+      <Label layoutX="502.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 4" textFill="#28ebc4">
          <font>
             <Font size="19.0" />
          </font>
@@ -139,17 +139,17 @@
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="6.0" layoutY="300.0" prefHeight="16.0" prefWidth="56.0" text="Name:" textFill="#ff5cec">
+      <Label alignment="CENTER" layoutX="6.0" layoutY="300.0" prefHeight="16.0" prefWidth="56.0" text="Name:" textFill="#28ebc4">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="6.0" layoutY="355.0" prefHeight="16.0" prefWidth="56.0" text="Race:" textFill="#ff5cec">
+      <Label alignment="CENTER" layoutX="6.0" layoutY="355.0" prefHeight="16.0" prefWidth="56.0" text="Race:" textFill="#28ebc4">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="6.0" layoutY="410.0" prefHeight="16.0" prefWidth="56.0" text="Color:" textFill="#ff5cec">
+      <Label alignment="CENTER" layoutX="6.0" layoutY="410.0" prefHeight="16.0" prefWidth="56.0" text="Color:" textFill="#28ebc4">
          <font>
             <Font size="18.0" />
          </font>
