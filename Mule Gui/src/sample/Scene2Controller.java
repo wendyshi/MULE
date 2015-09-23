@@ -122,11 +122,9 @@ public class Scene2Controller {
                 }
                 if (c1 == 4) {
                     if (p3.getName().equals(p4.getName())) {
-                        System.out.println(count + "A count");
                         createWindow("SameNameWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else if (p3.getColor().equals(p4.getColor())) {
-                        System.out.println(count + "A count");
                         createWindow("SameColorWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else {
@@ -149,24 +147,20 @@ public class Scene2Controller {
                             p2.getName().equals(p3.getName())) {
                         createWindow("SameNameWarning.fxml", 350, 170);
                         s1.setCount(count++);
-                        System.out.println(count + "A count");
                     } else if (p2.getColor().equals(p4.getColor())
                             || p2.getColor().equals(p3.getColor())) {
 
                         createWindow("SameColorWarning.fxml", 350, 170);
                         s1.setCount(count++);
-                        System.out.println(count + "A count");
                     } else {
                         repeatScene("MuleScene2.fxml");
                     }
                 }
                 if (c1 == 3) {
                     if (p2.getName().equals(p3.getName())) {
-                        System.out.println(count + "A count");
                         createWindow("SameNameWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else if (p2.getColor().equals(p3.getColor())) {
-                        System.out.println(count + "A count");
                         createWindow("SameColorWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else {
@@ -185,11 +179,9 @@ public class Scene2Controller {
 
                 if (c1 == 2) {
                     if (p1.getName().equals(p2.getName())) {
-                        System.out.println(count + "A count");
                         createWindow("SameNameWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else if (p1.getColor().equals(p2.getColor())) {
-                        System.out.println(count + "A count");
                         createWindow("SameColorWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else {
@@ -199,12 +191,10 @@ public class Scene2Controller {
                 if (c1 == 3) {
                     if (p1.getName().equals(p2.getName()) ||
                             p1.getName().equals(p3.getName())) {
-                        System.out.println(count + "A count");
                         createWindow("SameNameWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else if (p1.getColor().equals(p2.getColor()) ||
                             p1.getColor().equals(p3.getColor())) {
-                        System.out.println(count + "A count");
                         createWindow("SameColorWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else {
@@ -215,13 +205,11 @@ public class Scene2Controller {
                     if (p1.getName().equals(p2.getName()) ||
                             p1.getName().equals(p3.getName()) ||
                             p1.getName().equals(p4.getName())) {
-                        System.out.println(count + "A count");
                         createWindow("SameNameWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else if (p1.getColor().equals(p2.getColor()) ||
                             p1.getColor().equals(p3.getColor()) ||
                             p1.getColor().equals(p4.getColor())) {
-                        System.out.println(count + "A count");
                         createWindow("SameColorWarning.fxml", 350, 170);
                         s1.setCount(count++);
                     } else {
