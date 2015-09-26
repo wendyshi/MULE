@@ -55,3 +55,11 @@
 #New Text {
 -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
 }
+#Scene2
+{
+-fx-background-image: url("universe-35a.jpg");
+}
+#ReviewSettings
+{
+-fx-background-image: url("universe-18a.jpg");
+}

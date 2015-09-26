@@ -9,7 +9,9 @@ public class Player {
     private  String race;
     public Player()
     {
-
+        color = "";
+        name ="" ;
+        race ="";
     }
     public Player(String name, String race, String color)
     {

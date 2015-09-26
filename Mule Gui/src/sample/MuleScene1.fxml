@@ -88,17 +88,17 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="53.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="149.0" fitWidth="137.0" layoutX="53.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@two.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="216.0" layoutY="428.0" preserveRatio="true">
+      <ImageView fitHeight="144.0" fitWidth="160.0" layoutX="216.0" layoutY="428.0" preserveRatio="true">
          <image>
             <Image url="@three.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="376.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="144.0" fitWidth="196.0" layoutX="380.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@four.jpg" />
          </image>
