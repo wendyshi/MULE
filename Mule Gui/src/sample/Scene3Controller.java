@@ -158,7 +158,7 @@ public class Scene3Controller {
     @FXML
     private void setConfirm(ActionEvent event) throws Exception {
 
-        if (d.getText() == "") {
+        if (d.getText().equals("")||t.getText().equals("")|| n.getText().equals("") ) {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("ConfirmWarning.fxml"));
             stage.setTitle("Warning");
