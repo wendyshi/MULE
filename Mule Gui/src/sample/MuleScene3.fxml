@@ -71,22 +71,22 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="62.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 1" textFill="#ff5cec">
+      <Label layoutX="62.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player" textFill="#ff5cec">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="202.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 2" textFill="#ff5cec">
+      <Label layoutX="202.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player" textFill="#ff5cec">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="345.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 3" textFill="#ff5cec">
+      <Label layoutX="345.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player" textFill="#ff5cec">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="502.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player 4" textFill="#ff5cec">
+      <Label layoutX="502.0" layoutY="259.0" prefHeight="27.0" prefWidth="75.0" text="Player" textFill="#ff5cec">
          <font>
             <Font size="19.0" />
          </font>

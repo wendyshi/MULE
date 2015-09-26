@@ -266,10 +266,6 @@ public class Scene2Controller {
                 }
             }
         } catch (Exception e) {
-//            Scene1Controller s2 = new Scene1Controller();
-//            int cc = s2.getCount();
-//            s1.setCount(cc++);
-//            createWindow("SettingWarning.fxml", 350, 170);
             System.out.println(e);
 
         }
