@@ -38,7 +38,7 @@
             </font>
         </Label>
       <TextField fx:id="Name" layoutX="158.0" layoutY="146.0" prefHeight="32.0" prefWidth="284.0" promptText="Enter your name Here" text="Enter your name Here" />
-      <ComboBox fx:id="Race" layoutX="158.0" layoutY="250.0" onAction="#chooseRace" prefHeight="26.0" prefWidth="284.0" promptText="Choose your Race (Default Human)">
+      <ComboBox fx:id="Race" layoutX="158.0" layoutY="250.0" onAction="#chooseRace" prefHeight="26.0" prefWidth="284.0" promptText="Choose your Race">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Human" />
@@ -48,7 +48,7 @@
             </FXCollections>
         </items>
         </ComboBox>
-      <ComboBox fx:id="ColorPick" layoutX="158.0" layoutY="461.0" onAction="#chooseColor" prefHeight="26.0" prefWidth="284.0" promptText="Choose Your Color(Default Cyan)">
+      <ComboBox fx:id="ColorPick" layoutX="158.0" layoutY="461.0" onAction="#chooseColor" prefHeight="26.0" prefWidth="284.0" promptText="Choose Your Color">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Cyan" />
@@ -58,7 +58,7 @@
             </FXCollections>
         </items>
     </ComboBox>
-      <Label fx:id="Color" layoutX="158.0" layoutY="518.0" prefHeight="26.0" prefWidth="284.0" style="-fx-background-color: Cyan;" />
+      <Label fx:id="Color" layoutX="158.0" layoutY="518.0" prefHeight="26.0" prefWidth="284.0" style="-fx-background-color: White;" />
       <Label fx:id="Description" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="158.0" layoutY="292.0" prefHeight="147.0" prefWidth="284.0" text="There  are four races,&#10;choose a race to see the description&#10;of that race.&#10;" textFill="#f8f3f3">
          <font>
             <Font size="14.0" />
