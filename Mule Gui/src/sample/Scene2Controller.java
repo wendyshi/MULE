@@ -331,5 +331,9 @@ public class Scene2Controller {
     public Player getP4() {
         return p4;
     }
+    public void a()
+    {
+        
+    }
 
 }
