@@ -11,13 +11,14 @@ package m4demo;
  */
 public class GameSettings {
     
-    public String difficulty;
-    public int playerNumber;
-    public String mapType;
-    public Player p1;
-    public Player p2;
-    public Player p3;
-    public Player p4;
+    public static String difficulty;
+    public static int playerNumber;
+    public static String mapType;
+    public static Player p1;
+    public static Player p2;
+    public static Player p3;
+    public static Player p4;
+    public static Store store = new Store();
     
     public GameSettings(Player p1, Player p2, Player p3, Player p4) {
         difficulty = "Beginner";

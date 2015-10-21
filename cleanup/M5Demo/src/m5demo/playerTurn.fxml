@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m5demo.PlayerTurnController">
+   <children>
+      <Button fx:id="town" layoutX="207.0" layoutY="103.0" mnemonicParsing="false" onAction="#setTown" prefHeight="186.0" prefWidth="186.0" style="-fx-background-color: silver;" text="Town" textFill="#141414">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="NextOne" layoutX="493.0" layoutY="534.0" mnemonicParsing="false" onAction="#setNextOne" text="Next Player" />
+      <Label fx:id="playerinfo" layoutX="14.0" layoutY="393.0" prefHeight="194.0" prefWidth="165.0" text="..." wrapText="true" />
+      <ProgressBar fx:id="playerTimer" layoutX="200.0" layoutY="67.0" prefWidth="200.0" progress="0.0" />
+      <Label fx:id="info" layoutX="207.0" layoutY="414.0" prefHeight="33.0" prefWidth="318.0" text="System Info" />
+      <Button fx:id="assay" disable="true" layoutX="107.0" layoutY="245.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="100.0" text="AssayOffice" visible="false" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="land" disable="true" layoutX="393.0" layoutY="85.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="100.0" text="Land Office" visible="false" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="store" disable="true" layoutX="393.0" layoutY="245.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="100.0" text="Store" visible="false">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="pub" disable="true" layoutX="107.0" layoutY="85.0" mnemonicParsing="false" onAction="#setPub" prefHeight="160.0" prefWidth="100.0" text="Pub" visible="false">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" disable="true" layoutX="207.0" layoutY="289.0" mnemonicParsing="false" onAction="#setBack" prefHeight="115.0" prefWidth="186.0" style="-fx-background-color: gray;" text="Back" textFill="#c31313" visible="false">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Button>
+      <Label fx:id="info1" layoutX="248.0" layoutY="501.0" prefHeight="33.0" prefWidth="318.0" text="Player Turn End, Press Next Player To Continue!" visible="false" />
+      <Label layoutX="285.0" layoutY="415.0" />
+      <Label fx:id="info2" layoutX="207.0" layoutY="447.0" prefHeight="33.0" prefWidth="377.0" text="Dont Gamble Without Money Idiot!!!" visible="false" />
+   </children>
+</Pane>

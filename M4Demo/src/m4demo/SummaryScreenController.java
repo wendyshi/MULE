@@ -44,10 +44,10 @@ public class SummaryScreenController implements Initializable {
     public void setGameSettings(GameSettings gameSettings) {
         this.gameSettings = gameSettings;
         settingsLabel.setText(gameSettings.toString());
-        p1Label.setText(gameSettings.p1.toString());
-        p2Label.setText(gameSettings.p2.toString());
-        p3Label.setText(gameSettings.p3.toString());
-        p4Label.setText(gameSettings.p4.toString());
+        p1Label.setText(GameSettings.p1.toString());
+        p2Label.setText(GameSettings.p2.toString());
+        p3Label.setText(GameSettings.p3.toString());
+        p4Label.setText(GameSettings.p4.toString());
     }
     
     @FXML
@@ -64,13 +64,16 @@ public class SummaryScreenController implements Initializable {
         
         ButtonMapController next = loader.getController();
         next.setGameSettings(gameSettings);
-        next.setFreeTurns(gameSettings.playerNumber);
-        if (gameSettings.mapType.equals("Standard")) {
+        next.setFreeTurns(GameSettings.playerNumber);
+        if (GameSettings.mapType.equals("Standard")) {
             next.setMap(new Map());
         }
         next.info.setText("Click on a tile to purchase it.");
-        next.player.setText("Current player: " +gameSettings.p1.toString());
+        next.player.setText("Current player: " +GameSettings.p1.toString());
         next.price.setText("Land price: 0");
+        next.resources.setVisible(false);
+        next.updatePlayer();
+        next.updateOrder();
         stage.show();
     }
     

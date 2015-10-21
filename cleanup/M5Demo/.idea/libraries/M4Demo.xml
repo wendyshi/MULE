@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="M4Demo">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/M4Demo.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

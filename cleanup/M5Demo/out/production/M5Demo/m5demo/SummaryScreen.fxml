@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600" prefWidth="600" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m5demo.SummaryScreenController">
+    <children>
+        <Button fx:id="button" layoutX="507.0" layoutY="538.0" onAction="#toMap" text="To Map" />
+        <Label layoutX="247.0" layoutY="51.0" minHeight="16" minWidth="69" text="Settings" textAlignment="CENTER" />
+      <Label layoutX="65.0" layoutY="215.0" minHeight="16" minWidth="69" text="Player One" />
+      <Label layoutX="197.0" layoutY="215.0" minHeight="16" minWidth="69" text="Player Two" />
+      <Label layoutX="335.0" layoutY="215.0" minHeight="16" minWidth="69" text="Player Three" />
+      <Label layoutX="473.0" layoutY="215.0" minHeight="16" minWidth="69" text="Player Four" />
+      <Label fx:id="settingsLabel" layoutX="247.0" layoutY="68.0" minHeight="16" minWidth="69" text="Settings" />
+      <Label fx:id="p1Label" layoutX="65.0" layoutY="232.0" minHeight="16" minWidth="69" text="Player One" />
+      <Label fx:id="p2Label" layoutX="197.0" layoutY="232.0" minHeight="16" minWidth="69" text="Player Two" />
+      <Label fx:id="p3Label" layoutX="335.0" layoutY="232.0" minHeight="16" minWidth="69" text="Player Three" />
+      <Label fx:id="p4Label" layoutX="473.0" layoutY="232.0" minHeight="16" minWidth="69" text="Player Four" />
+    </children>
+</AnchorPane>

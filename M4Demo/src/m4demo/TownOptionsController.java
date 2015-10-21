@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -21,20 +22,192 @@ import javafx.stage.Stage;
 public class TownOptionsController implements Initializable {
 
     @FXML
+    public Label player;
+    @FXML
+    public Label prices;
+    @FXML
+    public Button map;
+    @FXML
+    public Button storebutton;
+    @FXML
+    public Button pubbutton;
+    @FXML
+    public Button landbutton;
+    @FXML
+    public Button assaybutton;
+    @FXML
     public Button back;
     @FXML
-    public Button op1;
+    public Button buy;
     @FXML
-    public Button op2;
+    public Button sell;
     @FXML
-    public Button op3;
+    public Button foodb;
     @FXML
-    public Button op4;
+    public Button energyb;
+    @FXML
+    public Button smithb;
+    @FXML
+    public Button mulefb;
+    @FXML
+    public Button muleeb;
+    @FXML
+    public Button mulesb;
+    @FXML
+    public Button foods;
+    @FXML
+    public Button energys;
+    @FXML
+    public Button mulefs;
+    @FXML
+    public Button mulees;
+    @FXML
+    public Button muless;
+    
+    private GameSettings gameSettings;
+    private Player current;
+    
+    public void setGameSettings(GameSettings gameSettings) {
+        this.gameSettings = gameSettings;
+    }
+    
+    public void setCurrent(Player current) {
+        this.current = current;
+        player.setText(current.toString());
+        prices.setText(GameSettings.store.toString());
+    }
     
     @FXML
     private void backToMap(ActionEvent event) {
-        Stage stage = (Stage) back.getScene().getWindow();
+        Stage stage = (Stage) map.getScene().getWindow();
         stage.close();
+    }
+    
+    @FXML
+    private void storeClick(ActionEvent event) {
+        storebutton.setVisible(false);
+        pubbutton.setVisible(false);
+        landbutton.setVisible(false);
+        assaybutton.setVisible(false);
+        map.setVisible(false);
+        buy.setVisible(true);
+        sell.setVisible(true);
+        back.setVisible(true);
+        prices.setVisible(true);
+    }
+    
+    @FXML
+    private void backDefault(ActionEvent event) {
+        storebutton.setVisible(true);
+        pubbutton.setVisible(true);
+        landbutton.setVisible(true);
+        assaybutton.setVisible(true);
+        map.setVisible(true);
+        buy.setVisible(false);
+        sell.setVisible(false);
+        back.setVisible(false);
+        prices.setVisible(false);
+        foodb.setVisible(false);
+        energyb.setVisible(false);
+        smithb.setVisible(false);
+        mulefb.setVisible(false);
+        muleeb.setVisible(false);
+        mulesb.setVisible(false);
+        foods.setVisible(false);
+        energys.setVisible(false);
+        mulefs.setVisible(false);
+        mulees.setVisible(false);
+        muless.setVisible(false);
+    }
+    
+    @FXML
+    private void buyClick(ActionEvent event) {
+        foodb.setVisible(true);
+        energyb.setVisible(true);
+        smithb.setVisible(true);
+        mulefb.setVisible(true);
+        muleeb.setVisible(true);
+        mulesb.setVisible(true);
+        foods.setVisible(false);
+        energys.setVisible(false);
+        mulefs.setVisible(false);
+        mulees.setVisible(false);
+        muless.setVisible(false);
+    }
+    
+    @FXML
+    private void sellClick(ActionEvent event) {
+        foods.setVisible(true);
+        energys.setVisible(true);
+        mulefs.setVisible(true);
+        mulees.setVisible(true);
+        muless.setVisible(true);
+        foodb.setVisible(false);
+        energyb.setVisible(false);
+        smithb.setVisible(false);
+        mulefb.setVisible(false);
+        muleeb.setVisible(false);
+        mulesb.setVisible(false);
+    }
+    
+    @FXML
+    private void foodBClick(ActionEvent event) {
+        GameSettings.store.buyFood(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void energyBClick(ActionEvent event) {
+        GameSettings.store.buyEnergy(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void mulefBClick(ActionEvent event) {
+        GameSettings.store.buyMuleF(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void muleeBClick(ActionEvent event) {
+        GameSettings.store.buyMuleE(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void mulesBClick(ActionEvent event) {
+        GameSettings.store.buyMuleS(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void foodSClick(ActionEvent event) {
+        GameSettings.store.sellFood(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void energySClick(ActionEvent event) {
+        GameSettings.store.sellEnergy(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void mulefSClick(ActionEvent event) {
+        GameSettings.store.sellMuleF(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void muleeSClick(ActionEvent event) {
+        GameSettings.store.sellMuleE(current);
+        player.setText(current.toString());
+    }
+    
+    @FXML
+    private void mulesSClick(ActionEvent event) {
+        GameSettings.store.sellMuleS(current);
+        player.setText(current.toString());
     }
     
     /**
@@ -42,7 +215,21 @@ public class TownOptionsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        buy.setVisible(false);
+        sell.setVisible(false);
+        back.setVisible(false);
+        prices.setVisible(false);
+        foodb.setVisible(false);
+        energyb.setVisible(false);
+        smithb.setVisible(false);
+        mulefb.setVisible(false);
+        muleeb.setVisible(false);
+        mulesb.setVisible(false);
+        foods.setVisible(false);
+        energys.setVisible(false);
+        mulefs.setVisible(false);
+        mulees.setVisible(false);
+        muless.setVisible(false);
     }
     
 }

@@ -6,13 +6,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="170.0" prefWidth="350.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="m4demo.TownOptionsController">
+<AnchorPane id="AnchorPane" prefHeight="170.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m4demo.TownOptionsController">
    <children>
-      <Button fx:id="back" layoutX="284.0" layoutY="131.0" mnemonicParsing="false" onAction="#backToMap" text="Back" />
-      <Button fx:id="op1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Store" />
-      <Button fx:id="op2" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" text="Pub" />
-      <Button fx:id="op3" layoutX="14.0" layoutY="85.0" mnemonicParsing="false" text="Land Office" />
-      <Button fx:id="op4" layoutX="14.0" layoutY="119.0" mnemonicParsing="false" text="Assay Office" />
+      <Button fx:id="map" layoutX="284.0" layoutY="131.0" mnemonicParsing="false" onAction="#backToMap" text="Map" />
+      <Button fx:id="storebutton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#storeClick" text="Store" />
+      <Button fx:id="pubbutton" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" text="Pub" />
+      <Button fx:id="landbutton" layoutX="14.0" layoutY="85.0" mnemonicParsing="false" text="Land Office" />
+      <Button fx:id="assaybutton" layoutX="14.0" layoutY="119.0" mnemonicParsing="false" text="Assay Office" />
+      <Button fx:id="back" layoutX="284.0" layoutY="131.0" mnemonicParsing="false" onAction="#backDefault" text="Back" />
+      <Button fx:id="buy" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#buyClick" text="Buy" />
+      <Button fx:id="sell" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#sellClick" text="Sell" />
+      <Label fx:id="prices" layoutX="261.0" layoutY="31.0" textAlignment="CENTER" />
+      <Label fx:id="player" layoutX="165.0" layoutY="31.0" textAlignment="CENTER" />
+      <Button fx:id="foodb" layoutX="70.0" layoutY="50.0" mnemonicParsing="false" onAction="#foodBClick" text="Food" />
+      <Button fx:id="energyb" layoutX="69.0" layoutY="85.0" mnemonicParsing="false" onAction="#energyBClick" text="Energy" />
+      <Button fx:id="smithb" layoutX="70.0" layoutY="119.0" mnemonicParsing="false" text="Smithore" />
+      <Button fx:id="mulesb" layoutX="144.0" layoutY="120.0" mnemonicParsing="false" onAction="#mulesBClick" text="Smithore" />
+      <Button fx:id="muleeb" layoutX="143.0" layoutY="86.0" mnemonicParsing="false" onAction="#muleeBClick" text="Energy" />
+      <Button fx:id="mulefb" layoutX="144.0" layoutY="51.0" mnemonicParsing="false" onAction="#mulefBClick" text="Food" />
+      <Button fx:id="mulefs" layoutX="149.0" layoutY="51.0" mnemonicParsing="false" onAction="#mulefSClick" text="Food" />
+      <Button fx:id="mulees" layoutX="148.0" layoutY="86.0" mnemonicParsing="false" onAction="#mulefSClick" text="Energy" />
+      <Button fx:id="muless" layoutX="149.0" layoutY="120.0" mnemonicParsing="false" onAction="#mulesSClick" text="Smithore" />
+      <Button fx:id="energys" layoutX="74.0" layoutY="85.0" mnemonicParsing="false" onAction="#energySClick" text="Energy" />
+      <Button fx:id="foods" layoutX="75.0" layoutY="50.0" mnemonicParsing="false" onAction="#foodSClick" text="Food" />
    </children>
 </AnchorPane>

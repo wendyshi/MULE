@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="M4Demo.jar" size="12209" download="eager" />
+    <jar href="M4Demo.jar" size="18336" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="M4Demo" >
     <param name="requiredFXVersion" value="2.2+"/>
