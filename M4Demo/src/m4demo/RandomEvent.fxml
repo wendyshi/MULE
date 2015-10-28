@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="m4demo.RandomEventController">
+   <center>
+      <Label fx:id="randomLabel" text="asdf" textFill="#d91f16" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </center>
+</BorderPane>

@@ -42,6 +42,7 @@ public class ButtonMapController implements Initializable {
     @FXML
     public Button refresh;
 
+
     private Map map;
     private GameSettings gameSettings;
     private int freeTurns;
@@ -52,11 +53,13 @@ public class ButtonMapController implements Initializable {
     private Boolean regTurn = false;
     private ArrayList<Player> playerlist = new ArrayList<>();
     private int turnnumber = 1;
+    private RandomEventController rec = new RandomEventController();
+
 
     public void setGameSettings(GameSettings gameSettings) {
         this.gameSettings = gameSettings;
     }
-    
+
     public void setCurrent(Player current) {
         this.current = current;
     }
@@ -79,6 +82,7 @@ public class ButtonMapController implements Initializable {
         } else {
             current = GameSettings.p1;
         }
+
     }
 
     public void updateText() {
@@ -86,13 +90,15 @@ public class ButtonMapController implements Initializable {
         player.setText("Current player: " + current.toString());
         price.setText("Land price: " + String.valueOf(landCost));
     }
-    
-    public void updateText2() {
+
+    public void updateText2() throws IOException{
+
         current.calcScore();
         player.setText("Current player: " + current.toString()
                 +"\nTurn number: " +turnnumber);
         price.setText("Land price: " + String.valueOf(landCost));
         resources.setText(current.resourceString());
+
     }
 
     public void updateOrder() {
@@ -105,8 +111,9 @@ public class ButtonMapController implements Initializable {
     }
 
     @FXML
-    private void handleButtonPress(ActionEvent event) {
-        
+    private void handleButtonPress(ActionEvent event) throws java.io.IOException{
+
+
         if (regTurn) {
             Button button = (Button) event.getSource();
 
@@ -122,14 +129,16 @@ public class ButtonMapController implements Initializable {
             } else {
                 column = 0;
             }
-            
+
             if (map.getTile(row, column).owner.equals(current.name) && current.mulef > 0
                     && !map.getTile(row, column).hasMule()) {
                 current = map.getTile(row, column).updateValue(current, "Food");
-                button.setText(current.name +"'s\nFMULE");
+                button.setText(current.name + "'s\nFMULE");
                 current.mulef--;
                 info.setText("MULE placed.");
                 map.getTile(row, column).mule = true;
+
+
                 updateText2();
             } else if (map.getTile(row, column).owner.equals(current.name) && current.mulee > 0) {
                 current = map.getTile(row, column).updateValue(current, "Energy");
@@ -160,7 +169,7 @@ public class ButtonMapController implements Initializable {
 
             updateText();
         }
-        
+
         if (canBuy) {
             Button button = (Button) event.getSource();
 
@@ -197,6 +206,47 @@ public class ButtonMapController implements Initializable {
                 playerNumber++;
             }
 
+/*            if (turnnumber < 4){ // new for M9 --- start
+                rec.setM(25);
+            }else if (turnnumber < 8){
+                rec.setM(50);
+            }else if (turnnumber < 12){
+                rec.setM(75);
+            }else {
+                rec.setM(100);
+            }
+            rec.setCurrent(current);
+            rec.calculateRand();
+
+            if (current == gameSettings.p1){
+                rec.setB(rec.checkScore(current.score, gameSettings.p2.score, gameSettings.p3.score,
+                        gameSettings.p4.score));
+            }else if (current == gameSettings.p2){
+                rec.setB(rec.checkScore(current.score, gameSettings.p1.score, gameSettings.p3.score,
+                        gameSettings.p4.score));
+            }else if (current == gameSettings.p3){
+                rec.setB(rec.checkScore(current.score, gameSettings.p2.score, gameSettings.p1.score,
+                        gameSettings.p4.score));
+            }else if (current == gameSettings.p4){
+                rec.setB(rec.checkScore(current.score, gameSettings.p2.score, gameSettings.p3.score,
+                        gameSettings.p1.score));
+            }
+            rec.checkRand();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("RandomEvent.fxml"));
+            loader.load();
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root, 350, 170));
+            stage.setTitle("Random Event");
+            stage.resizableProperty().setValue(false);
+
+            RandomEventController next = loader.getController();
+            next.randomLabel.setText("player: " + current.name + " " + rec.renew());
+//        next.setGameSettings(gameSettings);
+//        next.setCurrent(current);
+            stage.show(); // new for M9 --- end
+*/
             updatePlayer();
 
             if (freeTurns > 0) {
@@ -206,31 +256,82 @@ public class ButtonMapController implements Initializable {
                 }
             }
 
+
+
+
+
             updateText();
         }
 
     }
 
     @FXML
-    private void handlePass(ActionEvent event) {
-        
+    private void handlePass(ActionEvent event) throws IOException{
+
+
         if (regTurn && !playerlist.isEmpty()) {
             current = playerlist.get(0);
             current.updateResources(map);
             playerlist.remove(0);
             info.setText("Standard turn.");
             pass.setText("Next player");
+
+            rec.clearR1();
+            if (turnnumber < 4){ // new for M9 --- start
+                rec.setM(25);
+            }else if (turnnumber < 8){
+                rec.setM(50);
+            }else if (turnnumber < 12){
+                rec.setM(75);
+            }else {
+                rec.setM(100);
+            }
+            rec.setCurrent(current);
+            rec.calculateRand();
+
+            if (current == GameSettings.p1){
+                rec.setB(rec.checkScore(current.score, gameSettings.p2.score, gameSettings.p3.score,
+                        gameSettings.p4.score));
+            }else if (current == gameSettings.p2){
+                rec.setB(rec.checkScore(current.score, gameSettings.p1.score, gameSettings.p3.score,
+                        gameSettings.p4.score));
+            }else if (current == gameSettings.p3){
+                rec.setB(rec.checkScore(current.score, gameSettings.p2.score, gameSettings.p1.score,
+                        gameSettings.p4.score));
+            }else if (current == gameSettings.p4){
+                rec.setB(rec.checkScore(current.score, gameSettings.p2.score, gameSettings.p3.score,
+                        gameSettings.p1.score));
+            }
+            rec.checkRand();
+            if (!rec.renew().equals("")) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("RandomEvent.fxml"));
+                loader.load();
+                Parent root = loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root, 350, 170));
+                stage.setTitle("Random Event");
+                stage.resizableProperty().setValue(false);
+
+                RandomEventController next = loader.getController();
+                next.randomLabel.setText("player: " + current.name + " " + rec.renew());
+//        next.setGameSettings(gameSettings);
+//        next.setCurrent(current);
+                stage.show(); // new for M9 --- end
+            }
+
             updateText2();
         }
-        
+
         if (regTurn && playerlist.isEmpty()) {
             updateOrder();
             updateText2();
             pass.setText("Next turn");
             turnnumber++;
         }
-        
+
         if (canBuy) {
+
             current.passed = true;
             playerNumber++;
             updatePlayer();
@@ -257,9 +358,10 @@ public class ButtonMapController implements Initializable {
                 GameSettings.p1.passed = false;
             }
         }
-        
+
+
     }
-    
+
     @FXML
     private void refreshData(ActionEvent event) {
         current.calcScore();
@@ -272,7 +374,7 @@ public class ButtonMapController implements Initializable {
             resources.setText(current.resourceString());
         }
     }
-    
+
     @FXML
     private void handleTown(ActionEvent event) throws IOException {
         if (canBuy) {
@@ -284,7 +386,7 @@ public class ButtonMapController implements Initializable {
             stage.setScene(new Scene(root, 350, 170));
             stage.resizableProperty().setValue(false);
             stage.show();*/
-            
+
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("TownOptions.fxml"));
             loader.load();
