@@ -5,11 +5,13 @@
  */
 package m4demo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Don
  */
-public class Player implements Comparable<Player> {
+public class Player implements Comparable<Player>, Serializable {
     
     public String name;
     public String race;

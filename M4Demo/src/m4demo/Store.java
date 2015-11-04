@@ -5,11 +5,13 @@
  */
 package m4demo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Don
  */
-public class Store {
+public class Store implements Serializable{
     private int foodq;
     private int energyq;
     private int smithoreq;
@@ -186,6 +188,7 @@ public class Store {
         }
     }
     
+    @Override
     public String toString() {
         return "Prices\nFood: 30\nEnergy: 25\nFood MULE: 125\nEnergy MULE: 125"
                 + "\nSmithore MULE: 175";

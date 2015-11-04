@@ -5,11 +5,13 @@
  */
 package m4demo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Don
  */
-public class Map {
+public class Map implements Serializable{
     
     public Tile[][] map;
     

@@ -5,11 +5,13 @@
  */
 package m4demo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Don
  */
-public class Tile {
+public class Tile implements Serializable {
 
     public String terrain;
     public boolean owned;

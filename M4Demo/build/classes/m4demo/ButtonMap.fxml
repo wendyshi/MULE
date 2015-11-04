@@ -26,51 +26,51 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: peru;" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: saddlebrown;" GridPane.columnIndex="6" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="8" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: peru;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: saddlebrown;" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: saddlebrown;" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: peru;" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: saddlebrown;" GridPane.columnIndex="6" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="8" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: peru;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: saddlebrown;" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: saddlebrown;" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#handleTown" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: silver;" text="Town" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: peru;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: peru;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: green;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" onMouseEntered="#refreshMap" prefHeight="91.0" prefWidth="76.0" style="-fx-background-color: tan;" GridPane.columnIndex="8" GridPane.rowIndex="4" />
          </children>
       </GridPane>
       <Label fx:id="info" layoutX="14.0" layoutY="412.0" text="..." textAlignment="CENTER" />
@@ -79,5 +79,6 @@
       <Button fx:id="pass" layoutX="518.0" layoutY="546.0" mnemonicParsing="false" onAction="#handlePass" text="Pass" />
       <Button fx:id="refresh" layoutX="518.0" layoutY="513.0" mnemonicParsing="false" onAction="#refreshData" text="Refresh" />
       <Label fx:id="resources" layoutX="186.0" layoutY="483.0" text="..." textAlignment="CENTER" />
+      <Button fx:id="save" layoutX="518.0" layoutY="479.0" mnemonicParsing="false" onAction="#saveGame" text="Save" />
    </children>
 </AnchorPane>

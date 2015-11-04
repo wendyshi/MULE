@@ -5,20 +5,34 @@
  */
 package m4demo;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  *
  * @author Don
  */
-public class GameSettings {
+public class GameSettings implements Serializable {
     
-    public static String difficulty;
-    public static int playerNumber;
-    public static String mapType;
-    public static Player p1;
-    public static Player p2;
-    public static Player p3;
-    public static Player p4;
-    public static Store store = new Store();
+    public String difficulty;
+    public int playerNumber;
+    public String mapType;
+    public Player p1;
+    public Player p2;
+    public Player p3;
+    public Player p4;
+    public Store store = new Store();
+    
+    
+    
+    public Map map;
+    public int freeTurns;
+    public int landCost;
+    public Player current;
+    public Boolean canBuy;
+    public Boolean regTurn;
+    public ArrayList<Player> playerlist;
+    public int turnnumber;
     
     public GameSettings(Player p1, Player p2, Player p3, Player p4) {
         difficulty = "Beginner";
@@ -28,6 +42,18 @@ public class GameSettings {
         this.p2 = p2;
         this.p3 = p3;
         this.p4 = p4;
+    }
+    
+    
+    public void saveOther(ButtonMapController curr) {
+        this.map = curr.map;
+        this.freeTurns = curr.freeTurns;
+        this.landCost = curr.landCost;
+        this.current = curr.current;
+        this.canBuy = curr.canBuy;
+        this.regTurn = curr.regTurn;
+        this.playerlist = curr.playerlist;
+        this.turnnumber = curr.turnnumber;
     }
     
     @Override

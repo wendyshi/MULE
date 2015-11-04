@@ -5,7 +5,9 @@
  */
 package m4demo;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -41,19 +44,21 @@ public class ButtonMapController implements Initializable {
     public Button pass;
     @FXML
     public Button refresh;
+    @FXML
+    public Button save;
 
 
-    private Map map;
+    public Map map;
     private GameSettings gameSettings;
-    private int freeTurns;
-    private int landCost = 0;
+    public int freeTurns;
+    public int landCost = 0;
     private int playerNumber = 0;
-    private Player current;
-    private Boolean canBuy = true;
-    private Boolean regTurn = false;
-    private ArrayList<Player> playerlist = new ArrayList<>();
-    private int turnnumber = 1;
-    private RandomEventController rec = new RandomEventController();
+    public Player current;
+    public Boolean canBuy = true;
+    public Boolean regTurn = false;
+    public ArrayList<Player> playerlist = new ArrayList<>();
+    public int turnnumber = 1;
+    public RandomEventController rec = new RandomEventController();
 
 
     public void setGameSettings(GameSettings gameSettings) {
@@ -73,14 +78,14 @@ public class ButtonMapController implements Initializable {
     }
 
     public void updatePlayer() {
-        if ((playerNumber % GameSettings.playerNumber) == 3) {
-            current = GameSettings.p4;
-        } else if ((playerNumber % GameSettings.playerNumber) == 2) {
-            current = GameSettings.p3;
-        } else if ((playerNumber % GameSettings.playerNumber) == 1) {
-            current = GameSettings.p2;
+        if ((playerNumber % gameSettings.playerNumber) == 3) {
+            current = gameSettings.p4;
+        } else if ((playerNumber % gameSettings.playerNumber) == 2) {
+            current = gameSettings.p3;
+        } else if ((playerNumber % gameSettings.playerNumber) == 1) {
+            current = gameSettings.p2;
         } else {
-            current = GameSettings.p1;
+            current = gameSettings.p1;
         }
 
     }
@@ -103,10 +108,10 @@ public class ButtonMapController implements Initializable {
 
     public void updateOrder() {
         playerlist.clear();
-        playerlist.add(GameSettings.p1);
-        playerlist.add(GameSettings.p2);
-        playerlist.add(GameSettings.p3);
-        playerlist.add(GameSettings.p4);
+        playerlist.add(gameSettings.p1);
+        playerlist.add(gameSettings.p2);
+        playerlist.add(gameSettings.p3);
+        playerlist.add(gameSettings.p4);
         Collections.sort(playerlist);
     }
 
@@ -289,7 +294,7 @@ public class ButtonMapController implements Initializable {
             rec.setCurrent(current);
             rec.calculateRand();
 
-            if (current == GameSettings.p1){
+            if (current == gameSettings.p1){
                 rec.setB(rec.checkScore(current.score, gameSettings.p2.score, gameSettings.p3.score,
                         gameSettings.p4.score));
             }else if (current == gameSettings.p2){
@@ -337,10 +342,10 @@ public class ButtonMapController implements Initializable {
             updatePlayer();
             updateText();
 
-            if (GameSettings.p1.passed == true
-                    && GameSettings.p2.passed == true
-                    && GameSettings.p3.passed == true
-                    && GameSettings.p4.passed == true) {
+            if (gameSettings.p1.passed == true
+                    && gameSettings.p2.passed == true
+                    && gameSettings.p3.passed == true
+                    && gameSettings.p4.passed == true) {
                 info.setText("All players have passed. Next phase beginning.");
                 price.setVisible(false);
                 canBuy = false;
@@ -351,11 +356,11 @@ public class ButtonMapController implements Initializable {
                 updateText2();
             }
 
-            if ((playerNumber % GameSettings.playerNumber) == 0) {
-                GameSettings.p1.passed = false;
-                GameSettings.p1.passed = false;
-                GameSettings.p1.passed = false;
-                GameSettings.p1.passed = false;
+            if ((playerNumber % gameSettings.playerNumber) == 0) {
+                gameSettings.p1.passed = false;
+                gameSettings.p1.passed = false;
+                gameSettings.p1.passed = false;
+                gameSettings.p1.passed = false;
             }
         }
 
@@ -401,6 +406,44 @@ public class ButtonMapController implements Initializable {
             next.setCurrent(current);
             stage.show();
         }
+    }
+    
+    @FXML
+    private void saveGame(ActionEvent event) {
+        try {
+            gameSettings.saveOther(this);
+            FileOutputStream fileOut = new FileOutputStream("MuleSave.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(gameSettings);
+            out.close();
+            fileOut.close();
+            System.out.printf("Serialized data is saved in MuleSave.ser");
+        } catch (IOException i) {
+        }
+    }
+    
+    @FXML
+    private void refreshMap(MouseEvent event) {
+        Button button = (Button) event.getSource();
+
+            int row;
+            int column;
+            if (GridPane.getRowIndex(button) != null) {
+                row = GridPane.getRowIndex(button);
+            } else {
+                row = 0;
+            }
+            if (GridPane.getColumnIndex(button) != null) {
+                column = GridPane.getColumnIndex(button);
+            } else {
+                column = 0;
+            }
+            
+            if (map.getTile(row, column).owned && map.getTile(row, column).hasMule()) {
+                button.setText(map.getTile(row, column).owner +"'s\nEMULE");
+            } else if (map.getTile(row, column).owned) {
+                button.setText(map.getTile(row, column).owner);
+            }
     }
 
     @Override

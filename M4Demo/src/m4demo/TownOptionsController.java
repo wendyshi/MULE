@@ -74,7 +74,7 @@ public class TownOptionsController implements Initializable {
     public void setCurrent(Player current) {
         this.current = current;
         player.setText(current.toString());
-        prices.setText(GameSettings.store.toString());
+        prices.setText(gameSettings.store.toString());
     }
     
     @FXML
@@ -152,61 +152,61 @@ public class TownOptionsController implements Initializable {
     
     @FXML
     private void foodBClick(ActionEvent event) {
-        GameSettings.store.buyFood(current);
+        gameSettings.store.buyFood(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void energyBClick(ActionEvent event) {
-        GameSettings.store.buyEnergy(current);
+        gameSettings.store.buyEnergy(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void mulefBClick(ActionEvent event) {
-        GameSettings.store.buyMuleF(current);
+        gameSettings.store.buyMuleF(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void muleeBClick(ActionEvent event) {
-        GameSettings.store.buyMuleE(current);
+        gameSettings.store.buyMuleE(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void mulesBClick(ActionEvent event) {
-        GameSettings.store.buyMuleS(current);
+        gameSettings.store.buyMuleS(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void foodSClick(ActionEvent event) {
-        GameSettings.store.sellFood(current);
+        gameSettings.store.sellFood(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void energySClick(ActionEvent event) {
-        GameSettings.store.sellEnergy(current);
+        gameSettings.store.sellEnergy(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void mulefSClick(ActionEvent event) {
-        GameSettings.store.sellMuleF(current);
+        gameSettings.store.sellMuleF(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void muleeSClick(ActionEvent event) {
-        GameSettings.store.sellMuleE(current);
+        gameSettings.store.sellMuleE(current);
         player.setText(current.toString());
     }
     
     @FXML
     private void mulesSClick(ActionEvent event) {
-        GameSettings.store.sellMuleS(current);
+        gameSettings.store.sellMuleS(current);
         player.setText(current.toString());
     }
     

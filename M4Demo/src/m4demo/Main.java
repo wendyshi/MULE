@@ -5,6 +5,7 @@
  */
 package m4demo;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,8 +25,8 @@ public class Main extends Application {
     private GameSettings gameSettings = new GameSettings(p1, p2, p3, p4);
     
     @Override
-    public void start(Stage mainStage) throws Exception {
-        
+    public void start(Stage mainStage) throws IOException {
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("SummaryScreen.fxml"));
         loader.load();

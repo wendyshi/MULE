@@ -19,5 +19,6 @@
       <Label fx:id="p2Label" layoutX="197.0" layoutY="232.0" minHeight="16" minWidth="69" text="Player Two" />
       <Label fx:id="p3Label" layoutX="335.0" layoutY="232.0" minHeight="16" minWidth="69" text="Player Three" />
       <Label fx:id="p4Label" layoutX="473.0" layoutY="232.0" minHeight="16" minWidth="69" text="Player Four" />
+      <Button fx:id="loadbutton" layoutX="507.0" layoutY="504.0" onAction="#loadGame" text="Load Game" />
     </children>
 </AnchorPane>
