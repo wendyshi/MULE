@@ -3,7 +3,7 @@ package m4demo;
 import static org.junit.Assert.*;
 
 /**
- * 
+ *
  * Created by lintengfei on 15/11/4.
  */
 public class StoreTest1 {

@@ -5,13 +5,11 @@
  */
 package m4demo;
 
-import java.io.Serializable;
-
 /**
  *
  * @author Don
  */
-public class Player implements Comparable<Player>, Serializable {
+public class Player implements Comparable<Player> {
     
     public String name;
     public String race;
@@ -33,6 +31,22 @@ public class Player implements Comparable<Player>, Serializable {
         this.name = name;
         this.race = race;
         this.color = color;
+        this.funds = funds;
+        passed = false;
+        landowned = 0;
+        food = 8;
+        energy = 4;
+        smithore = 0;
+        crystite = 0;
+        mulef = 0;
+        mulee = 0;
+        mules = 0;
+        this.calcScore();
+    }
+    public Player(String name, String race, String color) {
+        this.name = name;
+        this.race = race;
+        this.color = color;
         this.funds = 600;
         passed = false;
         landowned = 0;
@@ -45,7 +59,8 @@ public class Player implements Comparable<Player>, Serializable {
         mules = 0;
         this.calcScore();
     }
-    
+
+
     public void calcScore() {
         score = (landowned * 500) + (food * 30) + (energy * 25) + 
                 (smithore * 50) + (crystite * 100) + (mulef * 125)
