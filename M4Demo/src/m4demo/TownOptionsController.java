@@ -7,7 +7,6 @@ package m4demo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -67,24 +66,38 @@ public class TownOptionsController implements Initializable {
     private GameSettings gameSettings;
     private Player current;
     
+    /**
+     * method to set the game setttings
+     * @param gameSettings the variable of GameSettings
+     * */
     public void setGameSettings(GameSettings gameSettings) {
         this.gameSettings = gameSettings;
     }
     
+    /**
+     * method to set current player
+     * @param current the current player
+     * */
     public void setCurrent(Player current) {
         this.current = current;
         player.setText(current.toString());
         prices.setText(gameSettings.store.toString());
     }
     
+    /**
+     * method to back to the map
+     * */
     @FXML
-    private void backToMap(ActionEvent event) {
+    private void backToMap() {
         Stage stage = (Stage) map.getScene().getWindow();
         stage.close();
     }
     
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void storeClick(ActionEvent event) {
+    private void storeClick() {
         storebutton.setVisible(false);
         pubbutton.setVisible(false);
         landbutton.setVisible(false);
@@ -95,9 +108,12 @@ public class TownOptionsController implements Initializable {
         back.setVisible(true);
         prices.setVisible(true);
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void backDefault(ActionEvent event) {
+    private void backDefault() {
         storebutton.setVisible(true);
         pubbutton.setVisible(true);
         landbutton.setVisible(true);
@@ -119,9 +135,12 @@ public class TownOptionsController implements Initializable {
         mulees.setVisible(false);
         muless.setVisible(false);
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void buyClick(ActionEvent event) {
+    private void buyClick() {
         foodb.setVisible(true);
         energyb.setVisible(true);
         smithb.setVisible(true);
@@ -134,9 +153,12 @@ public class TownOptionsController implements Initializable {
         mulees.setVisible(false);
         muless.setVisible(false);
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void sellClick(ActionEvent event) {
+    private void sellClick() {
         foods.setVisible(true);
         energys.setVisible(true);
         mulefs.setVisible(true);
@@ -149,63 +171,93 @@ public class TownOptionsController implements Initializable {
         muleeb.setVisible(false);
         mulesb.setVisible(false);
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void foodBClick(ActionEvent event) {
+    private void foodBClick() {
         gameSettings.store.buyFood(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void energyBClick(ActionEvent event) {
+    private void energyBClick() {
         gameSettings.store.buyEnergy(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void mulefBClick(ActionEvent event) {
+    private void mulefBClick() {
         gameSettings.store.buyMuleF(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void muleeBClick(ActionEvent event) {
+    private void muleeBClick() {
         gameSettings.store.buyMuleE(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void mulesBClick(ActionEvent event) {
+    private void mulesBClick() {
         gameSettings.store.buyMuleS(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void foodSClick(ActionEvent event) {
+    private void foodSClick() {
         gameSettings.store.sellFood(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void energySClick(ActionEvent event) {
+    private void energySClick() {
         gameSettings.store.sellEnergy(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void mulefSClick(ActionEvent event) {
+    private void mulefSClick() {
         gameSettings.store.sellMuleF(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void muleeSClick(ActionEvent event) {
+    private void muleeSClick() {
         gameSettings.store.sellMuleE(current);
         player.setText(current.toString());
     }
-    
+
+    /**
+     * method to setVisible of the button
+     * */
     @FXML
-    private void mulesSClick(ActionEvent event) {
+    private void mulesSClick() {
         gameSettings.store.sellMuleS(current);
         player.setText(current.toString());
     }
