@@ -6,7 +6,7 @@
 package m4demo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -31,9 +31,12 @@ public class GameSettings implements Serializable {
     public Player current;
     public Boolean canBuy;
     public Boolean regTurn;
-    public ArrayList<Player> playerlist;
+    public List<Player> playerlist;
     public int turnnumber;
-    
+
+    /**
+     * constructor method
+     * */
     public GameSettings(Player p1, Player p2, Player p3, Player p4) {
         difficulty = "Beginner";
         playerNumber = 4;
@@ -44,7 +47,9 @@ public class GameSettings implements Serializable {
         this.p4 = p4;
     }
     
-    
+    /**
+     *method to renew data
+     **/
     public void saveOther(ButtonMapController curr) {
         this.map = curr.map;
         this.freeTurns = curr.freeTurns;
@@ -56,6 +61,9 @@ public class GameSettings implements Serializable {
         this.turnnumber = curr.turnnumber;
     }
     
+    /**
+     * override toString() method
+     * */
     @Override
     public String toString() {
         return "Difficulty: " +difficulty +"\nNumber of Players: " +playerNumber
