@@ -16,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -24,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import java.util.List;
 
 /**
  * FXML Controller class
@@ -56,27 +56,45 @@ public class ButtonMapController implements Initializable {
     public Player current;
     public Boolean canBuy = true;
     public Boolean regTurn = false;
-    public ArrayList<Player> playerlist = new ArrayList<>();
+    public List<Player> playerlist = new ArrayList<>();
     public int turnnumber = 1;
     public RandomEventController rec = new RandomEventController();
 
-
+    /**
+     * method of game setting
+     * @param gameSettings variable of GameSettings
+     * */
     public void setGameSettings(GameSettings gameSettings) {
         this.gameSettings = gameSettings;
     }
 
+    /**
+     * set method to set current player
+     * @param current current player
+     * */
     public void setCurrent(Player current) {
         this.current = current;
     }
 
+    /**
+     * method to set the map
+     * @param map the map shows on the screen
+     * */
     public void setMap(Map map) {
         this.map = map;
     }
 
+    /**
+     * method to set the free turns
+     * @param players the number of players
+     * */
     public void setFreeTurns(int players) {
         freeTurns = players * 2;
     }
 
+    /**
+     * method to update player
+     * */
     public void updatePlayer() {
         if ((playerNumber % gameSettings.playerNumber) == 3) {
             current = gameSettings.p4;
@@ -90,22 +108,34 @@ public class ButtonMapController implements Initializable {
 
     }
 
+
+    /**
+     * method to update text
+     * */
     public void updateText() {
         current.calcScore();
         player.setText("Current player: " + current.toString());
-        price.setText("Land price: " + String.valueOf(landCost));
+        price.setText("Land price: " + landCost);
     }
 
+
+    /**
+     * method to update text
+     * */
     public void updateText2() throws IOException{
 
         current.calcScore();
         player.setText("Current player: " + current.toString()
                 +"\nTurn number: " +turnnumber);
-        price.setText("Land price: " + String.valueOf(landCost));
+        price.setText("Land price: " + landCost);
         resources.setText(current.resourceString());
 
     }
 
+
+    /**
+     * method to update order
+     * */
     public void updateOrder() {
         playerlist.clear();
         playerlist.add(gameSettings.p1);
@@ -115,6 +145,10 @@ public class ButtonMapController implements Initializable {
         Collections.sort(playerlist);
     }
 
+    /**
+     * method of the map button
+     * @param event to act the event when we press the button
+     * */
     @FXML
     private void handleButtonPress(ActionEvent event) throws java.io.IOException{
 
@@ -270,8 +304,12 @@ public class ButtonMapController implements Initializable {
 
     }
 
+
+    /**
+     * method of the button pass
+     * */
     @FXML
-    private void handlePass(ActionEvent event) throws IOException{
+    private void handlePass() throws IOException{
 
 
         if (regTurn && !playerlist.isEmpty()) {
@@ -342,10 +380,10 @@ public class ButtonMapController implements Initializable {
             updatePlayer();
             updateText();
 
-            if (gameSettings.p1.passed == true
-                    && gameSettings.p2.passed == true
-                    && gameSettings.p3.passed == true
-                    && gameSettings.p4.passed == true) {
+            if (gameSettings.p1.passed
+                    && gameSettings.p2.passed
+                    && gameSettings.p3.passed
+                    && gameSettings.p4.passed) {
                 info.setText("All players have passed. Next phase beginning.");
                 price.setVisible(false);
                 canBuy = false;
@@ -367,11 +405,14 @@ public class ButtonMapController implements Initializable {
 
     }
 
+    /**
+     * method to refresh the data
+     * */
     @FXML
-    private void refreshData(ActionEvent event) {
+    private void refreshData() {
         current.calcScore();
         player.setText("Current player: " + current.toString());
-        price.setText("Land price: " + String.valueOf(landCost));
+        price.setText("Land price: " + landCost);
         if (!canBuy) {
             resources.setVisible(true);
             player.setText("Current player: " + current.toString()
@@ -380,8 +421,11 @@ public class ButtonMapController implements Initializable {
         }
     }
 
+    /**
+     * method of the town button
+     * */
     @FXML
-    private void handleTown(ActionEvent event) throws IOException {
+    private void handleTown() throws IOException {
         if (canBuy) {
             info.setText("Cannot buy the Town.");
         } else {
@@ -407,9 +451,12 @@ public class ButtonMapController implements Initializable {
             stage.show();
         }
     }
-    
+
+    /**
+     * method of the save button
+     * */
     @FXML
-    private void saveGame(ActionEvent event) {
+    private void saveGame() {
         try {
             gameSettings.saveOther(this);
             FileOutputStream fileOut = new FileOutputStream("MuleSave.ser");
@@ -421,7 +468,10 @@ public class ButtonMapController implements Initializable {
         } catch (IOException i) {
         }
     }
-    
+
+    /**
+     * method of the map button
+     * */
     @FXML
     private void refreshMap(MouseEvent event) {
         Button button = (Button) event.getSource();
@@ -446,6 +496,9 @@ public class ButtonMapController implements Initializable {
             }
     }
 
+    /**
+     * override method
+     * */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
