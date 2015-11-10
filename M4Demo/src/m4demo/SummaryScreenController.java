@@ -17,7 +17,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -27,10 +26,10 @@ import javafx.stage.Stage;
  */
 public class SummaryScreenController implements Initializable {
 
-    @FXML
-    private Button button;
-    @FXML
-    private Button loadbutton;
+//    @FXML
+//    private Button button;
+//    @FXML
+//    private Button loadbutton;
 
     @FXML
     private Label settingsLabel;
@@ -45,6 +44,10 @@ public class SummaryScreenController implements Initializable {
 
     private GameSettings gameSettings;
 
+    /**
+     * method to set game settings
+     * @param gameSettings  the variable of GameSettings
+     * */
     public void setGameSettings(GameSettings gameSettings) {
         this.gameSettings = gameSettings;
         settingsLabel.setText(gameSettings.toString());
@@ -53,7 +56,11 @@ public class SummaryScreenController implements Initializable {
         p3Label.setText(gameSettings.p3.toString());
         p4Label.setText(gameSettings.p4.toString());
     }
-
+    
+    /**
+     * method to load the buttonMap.fxml
+     * @param event  to act what we want to do
+     * */
     @FXML
     private void toMap(ActionEvent event) throws IOException {
         ((Node) event.getSource()).getScene().getWindow().hide();
@@ -81,6 +88,10 @@ public class SummaryScreenController implements Initializable {
         stage.show();
     }
 
+    /**
+     * method to load the buttonMap.fxml
+     * @param event  to act what we want to do
+     * */
     @FXML
     private void loadGame(ActionEvent event) throws IOException  {
         ((Node) event.getSource()).getScene().getWindow().hide();
@@ -124,7 +135,10 @@ public class SummaryScreenController implements Initializable {
         next.updateText2();
         stage.show();
     }
-
+    
+    /**
+     * override method
+     * */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
