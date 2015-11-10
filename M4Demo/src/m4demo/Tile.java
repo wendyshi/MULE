@@ -21,7 +21,11 @@ public class Tile implements Serializable {
     public int food;
     public int energy;
     public int ore;
-
+    
+    /**
+     * constructor method 
+     * @param terrain to determine the map's owner
+     * */
     public Tile(String terrain) {
         this.terrain = terrain;
         this.owned = false;
@@ -29,13 +33,21 @@ public class Tile implements Serializable {
         this.mule = false;
     }
 
+    /**
+     * constructor method 
+     * @param terrain to determine the map's owner
+     * */
     public Tile(String terrain, String owner) {
         this.terrain = terrain;
         this.owned = true;
         this.owner = owner;
         this.mule = false;
     }
-
+    
+    /**
+     * method to check the player has mule or not
+     * @return return true if it has mule otherwise return false
+     * */
     public boolean hasMule() {
         return mule;
     }
