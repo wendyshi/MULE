@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import java.util.Random;
 
 /**
  * Created by Lei on 15/10/25.
@@ -17,12 +18,14 @@ public class RandomEventController implements Initializable {
     private boolean b; // round of the game;
     private Player current; // current player
     private String rl = "";
+    private Random random;
 
     @FXML
     public Label randomLabel;
 
 
     public RandomEventController(){
+        random = new Random();
     }
 
     /**
@@ -48,12 +51,11 @@ public class RandomEventController implements Initializable {
      * no bad event happened to the lowest score player
      * */
     public void selectRand(){
-        int r = (int)(Math.random() * 7) + 1;
-        System.out.println("boolean: " + getB());
-        System.out.println("M: " + getM());
+        int r = random.nextInt(7) + 1;
+
         while (getB()){
             if (r == 5 || r == 6 || r == 7) {
-                r = (int)(Math.random() * 7) + 1;
+                r = random.nextInt(7) + 1;
             }else{
                 setB(false);
             }
@@ -76,24 +78,18 @@ public class RandomEventController implements Initializable {
             case 3:
                 rl = "THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER"
                         + "\n For $" + 8 * getM();
-                System.out.println("original fund is " + current.funds);
                 current.funds += 8 * getM();
-                System.out.println("current fund is " + current.funds);
                 break;
             case 4:
                 rl = "YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE "
                         + "\n FOR $" + 2 * getM();
-                System.out.println("original fund is " + current.funds);
                 current.funds += 2 * getM();
-                System.out.println("current fund is " + current.funds);
 
                 break;
             case 5:
                 rl = "FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE."
                         + "\n REPAIRS COST $" + 4 * getM();
-                System.out.println("original fund is " + current.funds);
                 current.funds -= 4 * getM();
-                System.out.println("current fund is " + current.funds);
 
                 break;
             case 6:
@@ -105,9 +101,7 @@ public class RandomEventController implements Initializable {
             case 7:
                 rl = "YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. "
                         + "\nIT COST YOU $" + 6 * getM() + " TO CLEAN IT UP.";
-                System.out.println("original fund is " + current.funds);
                 current.funds -= 6 * getM();
-                System.out.println("current fund is " + current.funds);
 
                 break;
         }
@@ -125,15 +119,8 @@ public class RandomEventController implements Initializable {
      *          otherwise return false
      * */
     public boolean checkScore(int s1, int s2, int s3, int s4){
-        System.out.println("s1: " + s1);
-        System.out.println("s2: " + s2);
-        System.out.println("s3: " + s3);
-        System.out.println("s4: " + s4);
-        if (s1 <= s2 && s1 <= s3 && s1 <= s4){
-            return true;
-        }else {
-            return false;
-        }
+
+        return s1 <= s2 && s1 <= s3 && s1 <= s4;
     }
 
     /**
@@ -161,7 +148,6 @@ public class RandomEventController implements Initializable {
      * @param m the factor m
      * */
     public void setM(int m){
-        System.out.println("3333");
         this.m = m;
     }
 
