@@ -15,6 +15,9 @@ public class Map implements Serializable{
     
     public Tile[][] map;
     
+    /**
+     * constructor method to set the map
+     * */
     public Map() {
         map = new Tile[5][9];
         map[0][0] = new Tile("Plain");
@@ -68,6 +71,12 @@ public class Map implements Serializable{
         map[4][8] = new Tile("Mountain2");
     }
     
+    /**
+     * method to get the tile of the land plot
+     * @param row the number of row of the land plot
+     * @param column the number of column of the land plot
+     * @return return the type of the land
+     * */
     public Tile getTile(int row, int column) {
         return map[row][column];
     }
