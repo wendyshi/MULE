@@ -6,11 +6,10 @@
 package m4demo;
 
 /**
- *
  * @author Don
  */
 public class Player implements Comparable<Player> {
-    
+
     public String name;
     public String race;
     public String color;
@@ -27,6 +26,13 @@ public class Player implements Comparable<Player> {
     public int score;
     public int onturn = 1;
     
+    /**
+     * constructor method to set the information of players
+     * @param color color of the player
+     * @param funds funds of the player
+     * @param name name of the player
+     * @param race race of the player
+     * */
     public Player(String name, String race, String color, int funds) {
         this.name = name;
         this.race = race;
@@ -43,6 +49,13 @@ public class Player implements Comparable<Player> {
         mules = 0;
         this.calcScore();
     }
+
+    /**
+     * constructor method to set the information of players
+     * @param color color of the player
+     * @param name name of the player
+     * @param race race of the player
+     * */
     public Player(String name, String race, String color) {
         this.name = name;
         this.race = race;
@@ -60,39 +73,54 @@ public class Player implements Comparable<Player> {
         this.calcScore();
     }
 
-
+    /**
+     * method to calculate the score
+     * */
     public void calcScore() {
-        score = (landowned * 500) + (food * 30) + (energy * 25) + 
+        score = (landowned * 500) + (food * 30) + (energy * 25) +
                 (smithore * 50) + (crystite * 100) + (mulef * 125)
                 + (mulef * 150) + (mules * 175) + funds;
     }
     
+    /**
+     * method to update the resources
+     * */
     public void updateResources(Map map) {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 9; j++) {
-                if (map.map[i][j].owner.equals(name) && map.map[i][j].hasMule()) {
-                    if (this.energy > 0) {
-                        food += map.map[i][j].food;
-                        energy += map.map[i][j].energy;
-                        smithore += map.map[i][j].ore;
-                        energy--;
-                    }
+                if (map.map[i][j].owner.equals(name) && map.map[i][j].hasMule()
+                        && this.energy > 0) {
+
+                    food += map.map[i][j].food;
+                    energy += map.map[i][j].energy;
+                    smithore += map.map[i][j].ore;
+                    energy--;
+
                 }
             }
         }
     }
     
+    /**
+     * override toString() method
+     * */
     @Override
     public String toString() {
-        return "Name: " +name +"\nRace: " +race
-                +"\nColor: "+color +"\nFunds: " +funds +"\nScore: " +score;
+        return "Name: " + name + "\nRace: " + race
+                + "\nColor: " + color + "\nFunds: " + funds + "\nScore: " + score;
     }
     
+    /**
+     * method of the resources
+     * */
     public String resourceString() {
-        return "Food: " +food +"\nEnergy: " +energy +"\nSmithore: "+smithore
-                +"\nMULE (F): " +mulef +"\nMULE (E): " +mulee +"\nMULE (S): " +mules;
+        return "Food: " + food + "\nEnergy: " + energy + "\nSmithore: " + smithore
+                + "\nMULE (F): " + mulef + "\nMULE (E): " + mulee + "\nMULE (S): " + mules;
     }
-
+    
+    /**
+     * override compareTo() method
+     * */
     @Override
     public int compareTo(Player other) {
         return other.score - this.score;
