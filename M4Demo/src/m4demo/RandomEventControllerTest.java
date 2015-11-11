@@ -17,9 +17,16 @@ public class RandomEventControllerTest {
     public void setUp() throws Exception {
         rec = new RandomEventController();
     }
-
+    
+    /**
+     * use to check the current player has the lowest score or not
+     * the first one is the current player's score, the other three
+     * is the other players score
+     * if the current has the lowest score return true
+     * otherwise return false
+     * */
     @Test
-    public void testCheckScore() throws Exception {
+    public void testCheckScore(){
         assertTrue(rec.checkScore(1, 1, 1, 1));
         assertTrue(rec.checkScore(1, 1, 1, 2));
         assertTrue(rec.checkScore(1, 1, 2, 1));
