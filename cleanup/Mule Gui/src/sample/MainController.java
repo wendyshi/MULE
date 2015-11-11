@@ -16,6 +16,9 @@ public class MainController {
     private Button New;
     @FXML
 
+/**
+ * show the first window
+ */
     public void ShowScene1(ActionEvent e) throws Exception
     {
         Stage stage = (Stage)New.getScene().getWindow();

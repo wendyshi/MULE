@@ -17,13 +17,22 @@ public class WarningController {
     @FXML
     private Button Ok;
 
-
+    /**
+     * Handle when Ok clicked
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void oKayclicked(ActionEvent event) throws Exception {
         Stage s = (Stage) Okay.getScene().getWindow();
         s.close();
     }
 
+    /**
+     * Handle when Ok clicked
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void oKclick(ActionEvent event) throws Exception {
         Stage s = (Stage) Ok.getScene().getWindow();

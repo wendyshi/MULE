@@ -75,10 +75,9 @@ public class Scene3Controller {
     private Label p4Color;
 
 
-
-
-
-
+    /**
+     * default constructor
+     */
     public Scene3Controller() {
         Scene1Controller s1c = new Scene1Controller();
         GameConfig gc = s1c.getGameConfig();
@@ -95,6 +94,11 @@ public class Scene3Controller {
 
     }
 
+    /**
+     * set the text of the file based on the player number and other things
+     * @param event
+     * @throws Exception
+     */
     @FXML
     private void setshw(ActionEvent event) throws Exception {
         Scene2Controller s2c = new Scene2Controller();
@@ -144,6 +148,11 @@ public class Scene3Controller {
 
     }
 
+    /**
+     * set the stage
+     * @param event
+     * @throws Exception
+     */
     @FXML
     private void setStO(ActionEvent event) throws Exception {
         Stage stage = new Stage();
@@ -155,6 +164,11 @@ public class Scene3Controller {
 
     }
 
+    /**
+     * set the configuration warning window
+     * @param event
+     * @throws Exception
+     */
     @FXML
     private void setConfirm(ActionEvent event) throws Exception {
 

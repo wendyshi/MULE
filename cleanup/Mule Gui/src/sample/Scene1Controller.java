@@ -46,13 +46,20 @@ public class Scene1Controller {
     private static String level;
     private static GameConfig gameConfig;
 
-
+    /**
+     * Default Constructor
+     */
     public Scene1Controller() {
 
 
     }
 
 
+    /**
+     * Handle the selection of player and game config
+     * @param e
+     * @throws Exception
+     */
     @FXML
     public void ShowConfig(ActionEvent e) throws Exception {
         if ((!Standard.isSelected() && !Random.isSelected())
@@ -80,13 +87,22 @@ public class Scene1Controller {
         }
     }
 
+    /**
+     * Choose the difficulty level
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void chooseLevel(ActionEvent event) throws Exception {
         level = Difficulty.getSelectionModel().getSelectedItem().toString();
 
     }
 
-
+    /**
+     * Select map type
+     * @param e
+     * @throws Exception
+     */
     @FXML
     public void selectMap(ActionEvent e) throws Exception {
         if (Standard.isSelected()) {
@@ -97,6 +113,11 @@ public class Scene1Controller {
 
     }
 
+    /**
+     * Select player number
+     * @param e
+     * @throws Exception
+     */
     @FXML
     public void selectNumber(ActionEvent e) throws Exception {
 
@@ -113,6 +134,15 @@ public class Scene1Controller {
 
     }
 
+    /**
+     *  create a window of certain height and width from
+     *  a certain file with a certain name
+     * @param fxml
+     * @param title
+     * @param height
+     * @param width
+     * @throws Exception
+     */
     public void newWindow(String fxml, String title, int height, int width) throws Exception {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
@@ -123,23 +153,50 @@ public class Scene1Controller {
 
     }
 
+    /**
+     *
+     * @return map type
+     */
     public String getmType() {
         return mType;
     }
 
+    /**
+     *
+     * @return difficulty level
+     */
     public String getLevel() {
         return level;
     }
 
+    /**
+     *
+     * @return player number
+     */
     public int getCount() {
         return count;
     }
+
+    /**
+     *
+     * @return return value of c
+     */
     public int getC() {
         return c;
     }
+
+    /**
+     * ser the count
+     * @param count
+     */
     public void setCount(int count) {
         this.count = count;
     }
+
+    /**
+     *
+     * @return return the game configuration
+     */
     public GameConfig getGameConfig()
     {
         return gameConfig;
